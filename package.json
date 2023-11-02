@@ -1,0 +1,78 @@
+{
+  "homepage": "./",
+  "name": "freedomcells",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@deckdeckgo/qrcode": "^2.0.0",
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "aos": "^2.3.4",
+    "axios": "^0.20.0",
+    "croppie": "^2.6.5",
+    "glider-js": "^1.7.8",
+    "jquery": "^3.5.1",
+    "js-cookie": "^2.2.1",
+    "material-ui-slider": "^3.0.8",
+    "particles-bg": "^2.5.0",
+    "qrcode.react": "^1.0.0",
+    "react": "^16.13.1",
+    "react-autosize-textarea": "^7.1.0",
+    "react-axios": "^2.0.3",
+    "react-bootstrap-image-cropper": "^0.3.0",
+    "react-bootstrap-modal": "^4.2.0",
+    "react-browser-notifications": "^1.0.14",
+    "react-confirm-alert": "^2.6.2",
+    "react-cookie": "^4.0.3",
+    "react-dom": "^16.13.1",
+    "react-easy-crop": "^3.3.1",
+    "react-filter-search": "^1.0.11",
+    "react-helmet": "^6.1.0",
+    "react-icons-themify": "^1.0.0",
+    "react-js-pagination": "^3.0.3",
+    "react-particles-js": "^3.3.0",
+    "react-push-notification": "^1.3.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-select": "^3.1.0",
+    "react-share": "^4.3.1",
+    "react-toggle": "^4.1.1",
+    "reactjs-toastr": "^1.1.0",
+    "video-react": "^0.14.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/espsofttech/freedomcells_frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/espsofttech/freedomcells_frontend/issues"
+  },
+  "description": ""
+}

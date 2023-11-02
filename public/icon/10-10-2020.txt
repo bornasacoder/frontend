@@ -1,0 +1,32 @@
+Project:- Vnds
+
+-> Vnds userdashboard dashboard page recent activity table work.
+
+-> Vnds userdashboard transaction page table work.
+
+-> Vnds Admin support management page add in chat work and vnds logo white add in admin dashboard.
+
+
+Project:-Freedomcell
+
+-> Freedomcell dashboard wallet page work design issue resolve.
+
+-> Freedomcell dashboard suggest friend section design issue resolve.
+
+-> Freedomcell dashboard post image section work.
+
+
+Project:-Gloriouschain
+
+-> Gloriouschain plans page box and button design issue resolve.
+
+
+Project:->Mkoin
+
+-> Mkoin shop grid page work images change and header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin shop details page work header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin checkout page work header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin contact page work header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin blog page work  header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin blog detail page work  header or footer add Same as home page and dollar sign remove add in mk sign.
+-> Mkoin shopping cart page work  header or footer add Same as home page and dollar sign remove add in mk sign.
