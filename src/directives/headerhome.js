@@ -185,7 +185,10 @@ export default class Headerhome extends Component {
                                             {/* <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button> */}
                                             <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }}><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>
                                                 <Link to="/allprojectslist" onClick={this.loginPage}> All Projects</Link> </div></button>
-                                        </> : <> <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button>
+                                        </> : <> 
+                                                <Link to="/register">
+                                                    <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button>
+                                                </Link>
                                                 <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }}><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>
                                                     <Link to="/allprojectslist" onClick={this.loginPage}> All Projects</Link> </div></button>
                                             </>
