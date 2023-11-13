@@ -92,5 +92,25 @@ code {
       -o-object-fit: contain;
       object-fit: contain;
   }
+
+  .loginContentDiv{
+    flex-direction: column;
   }
+  }
+
+  @media only screen and (max-width: 800px) {
+ 
+    .loginContentDiv{
+      flex-direction: column;
+    }
+    .loginContentDiv2{
+      width: 100%!important;
+    }
+    .loginContentDivVideo{
+      width: "90%";
+    }
+    .loginContentDivVideo2{
+        width: 100%;
+    }
+    }
   

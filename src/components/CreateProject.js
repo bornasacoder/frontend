@@ -22,9 +22,9 @@ const initialState = {
 export default class Createproject extends Component {
 
 
-    // custom_file_upload_url = `${process.env.REACT_APP_URL}/api/users/group_create`;
-    // custom_file_upload_url1 = `${process.env.REACT_APP_URL}/api/users/post_comment`;
-    // // custom_file_upload_url2 = `${process.env.REACT_APP_URL}/api/users/post_comment_reply`;
+    // custom_file_upload_url = `https://freedomcells.net/freedomcell/api/users/group_create`;
+    // custom_file_upload_url1 = `https://freedomcells.net/freedomcell/api/users/post_comment`;
+    // // custom_file_upload_url2 = `https://freedomcells.net/freedomcell/api/users/post_comment_reply`;
 
 
 
@@ -136,7 +136,7 @@ export default class Createproject extends Component {
         $('#pay_now').prop('disabled', true);
         $('#pay_now').html('processing...');
         axios.post(
-            `${process.env.REACT_APP_URL}/api/users/project_create`,
+            'https://freedomcells.net/freedomcell/api/users/project_create',
             formData,
             {headers}
 

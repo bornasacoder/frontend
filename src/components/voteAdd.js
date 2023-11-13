@@ -109,7 +109,7 @@ export default class voteAdd extends Component {
             mainArr['options' + id] = options_new[i];
             test_data.push(mainArr['options' + id])
         });
-        axios.post(`${process.env.REACT_APP_URL}/api/users/create_voting`, {
+        axios.post('https://freedomcells.net/freedomcell/api/users/create_voting', {
             'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'title': this.state.title, 'closing_date': this.state.closing_date,
             'options': test_data
         },{headers})

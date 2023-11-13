@@ -52,7 +52,7 @@ export default class Twofa extends Component {
         this.state.is_enable_google_auth_code = this.loginData.is_enable_google_auth_code
 
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/two_factor_auth`, data,{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/two_factor_auth', data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {

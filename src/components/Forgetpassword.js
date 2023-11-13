@@ -69,7 +69,7 @@ export default class Forgetpassword extends Component {
             const data = this.state
 
 
-            axios.post(`${process.env.REACT_APP_URL}/api/users/forget_password`, data, { headers })
+            axios.post('https://freedomcells.net/freedomcell/api/users/forget_password', data, { headers })
                 .then(response => {
 
                     if (response.data.code === true) {
@@ -82,8 +82,11 @@ export default class Forgetpassword extends Component {
 
                     else if (response.data.code === false) {
                         toastr.error(response.data.message, { displayDuration: 3000 })
+
                     }
+
                 })
+
                 .catch(err => {
                     this.setState({
                         loading: false
@@ -93,9 +96,19 @@ export default class Forgetpassword extends Component {
         }
         else {
         }
+
+
     }
+
+
+
     render() {
+
+
+
+
         return (
+
             <>
                 <Helmet>
                     <title>{TITLE}</title>

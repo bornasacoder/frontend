@@ -418,7 +418,7 @@ export default class Setting extends Component {
         const data = this.state
 
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/change_password`, data,{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/change_password', data,{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 3000 })
@@ -461,7 +461,7 @@ export default class Setting extends Component {
 
     showDisplayNameAPI() {
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/show_display_name`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/show_display_name`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
             //on success
             this.codeDataDisplayName = res.data.code
             if (this.codeDataDisplayName === true) {
@@ -481,7 +481,7 @@ export default class Setting extends Component {
 
     async submitFormDisplayName(e) {
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_URL}/api/users/update_display_name`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'display_name': this.state.list.display_name },{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/update_display_name', { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'display_name': this.state.list.display_name },{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 30000 })
@@ -508,7 +508,7 @@ export default class Setting extends Component {
     //=====================================   Show Email API    ====================================
 
     showEmailAPI() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/show_email`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/show_email`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
             //on success
             this.codeDataEmail = res.data.code
             if (this.codeDataEmail === true) {
@@ -526,7 +526,7 @@ export default class Setting extends Component {
     //=====================================   Show Email Notification API    ====================================
 
     showEmailNotificationAPI() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/show_email_notification`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/show_email_notification`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
             //on success
             this.codeDataEmailNotification = res.data.code
             if (this.codeDataEmailNotification === true) {
@@ -559,7 +559,7 @@ export default class Setting extends Component {
 
     async emailNotificationSubmit(e) {
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_URL}/api/users/update_email_notification`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'email_notification': this.state.listEmailNotification.email_notification },{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/update_email_notification', { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'email_notification': this.state.listEmailNotification.email_notification },{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 30000 })
@@ -587,7 +587,7 @@ export default class Setting extends Component {
 
     twoFaAPI() {
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/check_two_factor_auth`, { 'user_id': this.loginData.id }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/check_two_factor_auth`, { 'user_id': this.loginData.id }).then((res) => {
             //on success
             this.setState({
                 listTwoFa: res.data.user_data
@@ -624,7 +624,7 @@ export default class Setting extends Component {
         delete data.email
         delete data.qrCodeUrl
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/two_factor_auth`, data,{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/two_factor_auth', data,{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 3000 })
@@ -658,7 +658,7 @@ export default class Setting extends Component {
             abc = this.count;
         }
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/hashtag_list`, {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/hashtag_list`, {
             'user_id': this.loginData.id, 'api_key': this.loginData.api_key,
             "offset": abc,
             "limit": "5"
@@ -711,7 +711,7 @@ export default class Setting extends Component {
         const data = this.state
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`${process.env.REACT_APP_URL}/api/users/add_hashtag`, data,{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/add_hashtag', data,{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 3000 })
@@ -746,7 +746,7 @@ export default class Setting extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/delete_hashtag`, { 'hashtag_id': id.id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/delete_hashtag`, { 'hashtag_id': id.id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
                             toastr.success('Deleted Successfully!', { displayDuration: 3000 })
 
                             this.showHashTagListAPI()
@@ -784,7 +784,7 @@ export default class Setting extends Component {
         const data = this.state
 
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/update_language`, data,{headers})
+        axios.post('https://freedomcells.net/freedomcell/api/users/update_language', data,{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 3000 })
@@ -815,7 +815,7 @@ export default class Setting extends Component {
 
     blockUserListAPI() {
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/blocked_user_list`, {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/blocked_user_list`, {
             'user_id': this.loginData.id, 'api_key': this.loginData.api_key,
 
         }).then((res) => {
@@ -850,7 +850,7 @@ export default class Setting extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/unblock`, { 'blocked_user_id': id.blocked_user_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/unblock`, { 'blocked_user_id': id.blocked_user_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }).then((res) => {
                             toastr.success('Unblocked Successfully!', { displayDuration: 3000 })
 
                             this.componentDidMount()
@@ -867,7 +867,7 @@ export default class Setting extends Component {
     //==========================================  Referral API  =============
 
     referralAPI = () => {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/show_referral_code`, {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/show_referral_code`, {
             'user_id': this.loginData.id, 'api_key': this.loginData.api_key,
 
         }).then((res) => {
@@ -2044,6 +2044,8 @@ export default class Setting extends Component {
                                                                             </div>
                                                                             <div className="m-settingsV2__desc"> Oversee disciplinary measures taken on your posts and channel.
                                              </div>
+
+
                                                                         </div>
                                                                         <div className="blocked_channels" style={{ display: 'none' }}>
                                                                             <br />

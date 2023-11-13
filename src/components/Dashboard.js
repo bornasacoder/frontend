@@ -38,11 +38,11 @@ const initialState = {
 }
 export default class Dashboard extends Component {
 
-    custom_file_upload_url = `${process.env.REACT_APP_URL}/api/users/add_post`;
-    custom_file_upload_urlEdit = `${process.env.REACT_APP_URL}/api/users/edit_post`;
+    custom_file_upload_url = `https://freedomcells.net/freedomcell/api/users/add_post`;
+    custom_file_upload_urlEdit = `https://freedomcells.net/freedomcell/api/users/edit_post`;
 
-    custom_file_upload_url1 = `${process.env.REACT_APP_URL}/api/users/post_comment`;
-    custom_file_upload_url2 = `${process.env.REACT_APP_URL}/api/users/post_comment_reply`;
+    custom_file_upload_url1 = `https://freedomcells.net/freedomcell/api/users/post_comment`;
+    custom_file_upload_url2 = `https://freedomcells.net/freedomcell/api/users/post_comment_reply`;
 
     constructor(props) {
         super(props);
@@ -245,7 +245,7 @@ export default class Dashboard extends Component {
         //=======================================  Timeline data ======================
         // $('#main_loader').show();
         // $('#root').css('opacity', '0.5');
-        axios.post(`${process.env.REACT_APP_URL}/api/users/timeline`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/timeline`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeData1 = res.data.code
             if (this.codeData1 === true) {
@@ -271,7 +271,7 @@ export default class Dashboard extends Component {
 
     followingAPI() {
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/following_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/following_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataFollowing = res.data.code
             if (this.codeDataFollowing === true) {
@@ -293,7 +293,7 @@ export default class Dashboard extends Component {
     AllHashtagListAPI() {
         
         var search = $('input[name="input_tag"]').val().replace(/\s/g, '');
-        axios.post(`${process.env.REACT_APP_URL}/api/users/search_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'search': search }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/search_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'search': search }, { headers }).then((res) => {
             //on success
             this.codeDataHashtagList = res.data.code
             if (this.codeDataHashtagList === true) {
@@ -317,7 +317,7 @@ export default class Dashboard extends Component {
     //==================================  List of nsfw List  ==============================
 
     AllNSFWAPI() {
-        axios.get(`${process.env.REACT_APP_URL}/api/users/nsfw`, {}).then((res) => {
+        axios.get(`https://freedomcells.net/freedomcell/api/users/nsfw`, {}).then((res) => {
             //on success
             this.codeDataNsfwList = res.data.code
             if (this.codeDataNsfwList === true) {
@@ -335,12 +335,14 @@ export default class Dashboard extends Component {
             //on error
             //alert("There is an error in API call.");
         });
+
     }
+
     //==================================  Detail of Hashtag List  ==============================
 
     hashtagListAPI() {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/select_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/select_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataHashtagsList = res.data.code
             if (this.codeDataHashtagsList === true) {
@@ -360,7 +362,9 @@ export default class Dashboard extends Component {
     //==================================  Detail of Friends List  ==============================
 
     friendsAPI() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/friend_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+
+
+        axios.post(`https://freedomcells.net/freedomcell/api/users/friend_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataFriends = res.data.code
             if (this.codeDataFriends === true) {
@@ -383,7 +387,7 @@ export default class Dashboard extends Component {
     followerAPI() {
 
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/follower_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/follower_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataFollower = res.data.code
             if (this.codeDataFollower === true) {
@@ -405,7 +409,7 @@ export default class Dashboard extends Component {
     walletBalanceAPI() {
 
 
-        axios.post(`${process.env.REACT_APP_URL}/api/users/wallet_balance`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/wallet_balance`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataWalletBalance = res.data.code
             if (this.codeDataWalletBalance === true) {
@@ -609,7 +613,7 @@ export default class Dashboard extends Component {
 
     submitLike(id) {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/post_like`, { 'post_id': id.post_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers })
+        axios.post('https://freedomcells.net/freedomcell/api/users/post_like', { 'post_id': id.post_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers })
             .then(response => {
                 if (response.data.code === true) {
 
@@ -634,7 +638,7 @@ export default class Dashboard extends Component {
 
     submitdisLike(id) {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/post_dislike`, { 'post_id': id.post_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers })
+        axios.post('https://freedomcells.net/freedomcell/api/users/post_dislike', { 'post_id': id.post_id, 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers })
             .then(response => {
                 if (response.data.code === true) {
 
@@ -746,6 +750,10 @@ export default class Dashboard extends Component {
         formData.append('post_id', id);
         formData.append('api_key', this.loginData.api_key);
         formData.append('file_type', this.state.file_type);
+
+
+
+
         axios.post(
             this.custom_file_upload_url1,
             formData,
@@ -846,7 +854,7 @@ export default class Dashboard extends Component {
                     {
                         label: 'Yes',
                         onClick: () =>
-                            axios.post(`${process.env.REACT_APP_URL}/api/users/post_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_id': id.post_id }, { headers }).then((res) => {
+                            axios.post(`https://freedomcells.net/freedomcell/api/users/post_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_id': id.post_id }, { headers }).then((res) => {
                                 this.timelineAPI()
                                 $('#main_loader').show();
                                 $('#root').css('opacity', '0.5');
@@ -879,7 +887,7 @@ export default class Dashboard extends Component {
                     label: 'Yes',
                     onClick: () =>
 
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/block`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'blocked_user_id': id.user_id }, { headers }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/block`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'blocked_user_id': id.user_id }, { headers }).then((res) => {
                             this.timelineAPI()
 
                         }).catch((error) => {
@@ -904,7 +912,7 @@ export default class Dashboard extends Component {
                     {
                         label: 'Yes',
                         onClick: () =>
-                            axios.post(`${process.env.REACT_APP_URL}/api/users/follow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': id.user_id }, { headers }).then((res) => {
+                            axios.post(`https://freedomcells.net/freedomcell/api/users/follow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': id.user_id }, { headers }).then((res) => {
                                 this.timelineAPI()
 
                             }).catch((error) => {
@@ -924,7 +932,7 @@ export default class Dashboard extends Component {
                     {
                         label: 'Yes',
                         onClick: () =>
-                            axios.post(`${process.env.REACT_APP_URL}/api/users/unfollow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': id.user_id }, { headers }).then((res) => {
+                            axios.post(`https://freedomcells.net/freedomcell/api/users/unfollow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': id.user_id }, { headers }).then((res) => {
                                 this.timelineAPI()
 
                             }).catch((error) => {
@@ -950,7 +958,7 @@ export default class Dashboard extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/post_comment_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_comment_id': id.post_comment_id }, { headers }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/post_comment_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_comment_id': id.post_comment_id }, { headers }).then((res) => {
                             this.timelineAPI()
                             $('#main_loader').show();
                             $('#root').css('opacity', '0.5');
@@ -982,7 +990,7 @@ export default class Dashboard extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/post_comment_reply_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_comment_id': id.post_comment_reply_id }, { headers }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/post_comment_reply_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_comment_id': id.post_comment_reply_id }, { headers }).then((res) => {
                             this.timelineAPI()
                             $('#main_loader').show();
                             $('#root').css('opacity', '0.5');
@@ -1025,7 +1033,7 @@ export default class Dashboard extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`${process.env.REACT_APP_URL}/api/users/tip`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_id': this.state.crowdDetail.post_id, 'token': this.state.token }, { headers }).then((res) => {
+                        axios.post(`https://freedomcells.net/freedomcell/api/users/tip`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'post_id': this.state.crowdDetail.post_id, 'token': this.state.token }, { headers }).then((res) => {
 
                             if (res.data.code === true) {
 
@@ -1058,7 +1066,7 @@ export default class Dashboard extends Component {
 
     groupAPI() {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/group_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/group_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataGroup = res.data.code
             if (this.codeDataGroup === true) {
@@ -1103,7 +1111,7 @@ export default class Dashboard extends Component {
 
     postEdit(editPost) {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/post_detail`, { 'user_id': this.loginData.id, 'post_id': editPost.post_id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/post_detail`, { 'user_id': this.loginData.id, 'post_id': editPost.post_id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataPostDetail = res.data.code
             if (this.codeDataPostDetail === true) {
@@ -1156,7 +1164,7 @@ export default class Dashboard extends Component {
 
     suggestedChannel() {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/sujjested_channels`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/sujjested_channels`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataSuggested = res.data.code
             if (this.codeDataSuggested === true) {
@@ -1182,7 +1190,7 @@ export default class Dashboard extends Component {
 
     deleteChannnels(channelsId) {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/block`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'blocked_user_id': channelsId.user_id }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/block`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'blocked_user_id': channelsId.user_id }, { headers }).then((res) => {
             //on success
             this.codeDataBlockChannels = res.data.code
             if (this.codeDataBlockChannels === true) {
@@ -1197,7 +1205,7 @@ export default class Dashboard extends Component {
 
     joinGroup(channelsId) {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/follow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': channelsId.user_id },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/follow`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'following_id': channelsId.user_id },{headers}).then((res) => {
             //on success
             this.codeDataJoinChannels = res.data.code
             if (this.codeDataJoinChannels === true) {
@@ -1217,7 +1225,7 @@ export default class Dashboard extends Component {
 
     suggestedTags() {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/sujjested_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/sujjested_hashtag`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataSuggestedHasTags = res.data.code
             if (this.codeDataSuggestedHasTags === true) {
@@ -1249,7 +1257,7 @@ export default class Dashboard extends Component {
     exchangeDataSubmit(e) {
         e.preventDefault()
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/repost`, {
+        axios.post('https://freedomcells.net/freedomcell/api/users/repost', {
             'user_id': this.loginData.id, 'api_key': this.loginData.api_key,
             'post_id': this.state.exchangeData?.post_id, 'repost_comment': this.state.repost_comment
         }, { headers })
@@ -1284,7 +1292,7 @@ export default class Dashboard extends Component {
 
     BannerImageAPI() {
         
-        axios.post(`${process.env.REACT_APP_URL}/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataAvatarBanner = res.data.code
             if (this.codeDataAvatarBanner === true) {
@@ -1324,7 +1332,7 @@ export default class Dashboard extends Component {
         
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`${process.env.REACT_APP_URL}/api/users/hashtag_timeline`, { 'user_id': this.loginData.id, 'hashtag': id.hashtag, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/hashtag_timeline`, { 'user_id': this.loginData.id, 'hashtag': id.hashtag, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataHashtagDetail = res.data.code
             if (this.codeDataHashtagDetail === true) {
@@ -1347,7 +1355,7 @@ export default class Dashboard extends Component {
 
         //====================================  VOTING lIST        ================
         showVoting() {
-            axios.post(`${process.env.REACT_APP_URL}/api/users/show_voting`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+            axios.post(`https://freedomcells.net/freedomcell/api/users/show_voting`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
                 //on success
                 this.codeShowVotingList = res.data.code
                 if (this.codeShowVotingList === true) {
@@ -1367,7 +1375,7 @@ export default class Dashboard extends Component {
         //================================  Voting Result =========================
     
         userVoting(id) {
-            axios.post(`${process.env.REACT_APP_URL}/api/users/user_voting`, {
+            axios.post(`https://freedomcells.net/freedomcell/api/users/user_voting`, {
                 'user_id': this.loginData.id, 'api_key': this.loginData.api_key,
                 "voting_title_id": id, "option_id": this.state.option_id
             }, { headers }).then((res) => {

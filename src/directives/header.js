@@ -21,7 +21,6 @@ const initialState = {
     passwordError: '',
     confirmpasswordError: '',
     confirmpassword1Error: '',
-
 }
 
 export default class Header extends Component {
@@ -117,9 +116,9 @@ export default class Header extends Component {
             const data = this.state
 
 
-            axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data, { headers })
+            axios.post('https://freedomcells.net/freedomcell/api/users/register', data, { headers })
                 .then(response => {
-
+                    console.log(response)
                     if (response.data.code === true) {
                         toastr.success(response.data.message, { displayDuration: 3000 })
                         this.setState({
@@ -140,6 +139,7 @@ export default class Header extends Component {
                 })
 
                 .catch(err => {
+                    console.log(err)
                     this.setState({
                         loading: false
                     })
@@ -175,7 +175,10 @@ export default class Header extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <Link className="navbar-brand" to="/" onClick={this.loginPage}><img className="img-responsive" alt="Notjing" src="logo_freedom_white.png" /></Link>
+                            <Link className="navbar-brand" to="/" onClick={this.loginPage}>
+                            {/* <img className="img-responsive" alt="Notjing" src="logo_freedom_white.png" /> */}
+                            <img className="img-responsive" alt="Notjing" src="/new-logo2.png"style={{width:"100px",height:"70px",borderRadius:"100%"}} />
+                            </Link>
                         </div>
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

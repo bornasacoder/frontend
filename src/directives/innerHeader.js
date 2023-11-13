@@ -31,7 +31,7 @@ export default class InnerHeader extends Component {
         this.setState({
             [e.target.name]: e.target.value
         })
-        axios.post(`${process.env.REACT_APP_URL}/api/users/all_search`, { 'user_id': this.loginData.id, 'search': this.state.main_search_val, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/all_search`, { 'user_id': this.loginData.id, 'search': this.state.main_search_val, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             this.codeDataAvatarBanner1 = res.data.code
             if (this.codeDataAvatarBanner1 === true) {
                 this.setState({
@@ -94,7 +94,7 @@ export default class InnerHeader extends Component {
             $('.search_ul').hide();
             return false;
         }
-        axios.post(`${process.env.REACT_APP_URL}/api/users/all_search`, { 'user_id': this.loginData.id, 'search': this.state.main_search_val, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/all_search`, { 'user_id': this.loginData.id, 'search': this.state.main_search_val, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             this.codeDataAvatarBanner1 = res.data.code
             if (this.codeDataAvatarBanner1 === true) {
                 this.setState({
@@ -114,7 +114,7 @@ export default class InnerHeader extends Component {
     //==================================  Detail of Avatar Banner  ==============================
 
     BannerImageAPI() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             this.codeDataAvatarBanner = res.data.code
             if (this.codeDataAvatarBanner === true) {
                 this.setState({
@@ -175,7 +175,7 @@ export default class InnerHeader extends Component {
     //==================================  Notifications list  ==============================
 
     notificationList() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/notification_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'limit': 10 },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/notification_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'limit': 10 },{headers}).then((res) => {
             this.codeDataNotification = res.data.code
             if (this.codeDataNotification === true) {
                 this.notifCount = res.data
@@ -227,7 +227,7 @@ export default class InnerHeader extends Component {
     //===================================== Notification Read  ===========================
 
     notificationRead() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': "0" },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': "0" },{headers}).then((res) => {
             this.codeDataNotificationReadAll = res.data.code
             if (this.codeDataNotificationReadAll === true) {
                 window.location.hash = '/AllNotification';
@@ -244,7 +244,7 @@ export default class InnerHeader extends Component {
     //===================================== Notification Bell click Read  ===========================
 
     notificationReadBell() {
-        axios.post(`${process.env.REACT_APP_URL}/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': "0" },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': "0" },{headers}).then((res) => {
             this.codeDataNotificationReadAll = res.data.code
             if (this.codeDataNotificationReadAll === true) {
 
@@ -260,7 +260,7 @@ export default class InnerHeader extends Component {
 
     notificationReadSingle(id) {
         console.log(id)
-        axios.post(`${process.env.REACT_APP_URL}/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': id.notification_id },{headers}).then((res) => {
+        axios.post(`https://freedomcells.net/freedomcell/api/users/notification_read`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'notification_id': id.notification_id },{headers}).then((res) => {
             this.codeDataNotificationReadAll = res.data.code
             if (this.codeDataNotificationReadAll === true) {
                 window.location.hash = id.link
