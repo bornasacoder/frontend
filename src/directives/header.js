@@ -192,12 +192,7 @@ export default class Header extends Component {
                                     <li className="gold"><a href="javasript:void(0);"><button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px' }}  ><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button></a></li>
                             </ul>
                         </Link>
-                            
-                            {/* <ul className="nav navbar-nav navbar-right visible-xs visible-sm">
-                                <Link to="/login">
-                                    <li className="gold" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }} ><a href="javasript:void(0);" data-toggle="modal" data-target="#pop-register">Login</a></li>
-                                </Link>
-                            </ul> */}
+       
                         </div>
 
                     </div>
