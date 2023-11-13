@@ -42,7 +42,7 @@ export default class Allprojects extends Component {
 
     projectAPI() {
         
-        axios.post(`https://freedomcells.net/freedomcell/api/users/all_project_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/all_project_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataProject = res.data.code
             if (this.codeDataProject === true) {
@@ -66,7 +66,7 @@ export default class Allprojects extends Component {
 
     myProjectAPI() {
        
-        axios.post(`https://freedomcells.net/freedomcell/api/users/project_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/project_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataProjectMy = res.data.code
             if (this.codeDataProjectMy === true) {
@@ -105,7 +105,7 @@ export default class Allprojects extends Component {
                     {
                         label: 'Yes',
                         onClick: () =>
-                            axios.post(`https://freedomcells.net/freedomcell/api/users/group_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'group_id': id },{headers}).then((res) => {
+                            axios.post(`${process.env.REACT_APP_URL}/api/users/group_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'group_id': id },{headers}).then((res) => {
                                 $('#main_loader').show();
                                 $('#root').css('opacity', '0.5');
     

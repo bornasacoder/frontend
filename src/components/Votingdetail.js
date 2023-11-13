@@ -35,7 +35,7 @@ export default class votingDetail extends Component {
 
       //=================================================  voting detail   ==================================
       votingDetail() {
-        axios.post('https://freedomcells.net/freedomcell/api/users/voting_detail', { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'voting_title_id': this.voting_id }, { headers })
+        axios.post(`${process.env.REACT_APP_URL}/api/users/voting_detail`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'voting_title_id': this.voting_id }, { headers })
             .then(response => {
 
                 if (response.data.code === true) {

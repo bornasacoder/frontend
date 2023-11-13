@@ -32,7 +32,7 @@ export default class MyVotes extends Component {
     //==================================  Detail of Project List  ==============================
 
     votesListAPI() {
-        axios.post(`https://freedomcells.net/freedomcell/api/users/voting_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/voting_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             this.codeDataVotes = res.data.code
             if (this.codeDataVotes === true) {
                 this.setState({
@@ -66,7 +66,7 @@ export default class MyVotes extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`https://freedomcells.net/freedomcell/api/users/delete_voting`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'voting_title_id': id },{headers}).then((res) => {
+                        axios.post(`${process.env.REACT_APP_URL}/api/users/delete_voting`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'voting_title_id': id },{headers}).then((res) => {
                             $('#main_loader').show();
                             $('#root').css('opacity', '0.5');
 

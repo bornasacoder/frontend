@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 const TITLE = 'Freedom-cells-Profilesetup'
 
 export default class Profilesetup extends Component {
-    custom_file_upload_url = `https://freedomcells.net/freedomcell/api/users/add_user_interest`;
+    custom_file_upload_url = `${process.env.REACT_APP_URL}/api/users/add_user_interest`;
 
     constructor(props) {
         super(props);
@@ -19,6 +19,7 @@ export default class Profilesetup extends Component {
             listHashtag: [],
             image_file: null,
             image_preview: '',
+            email_verify: 1
         }
         this.onChange = this.onChange.bind(this);
         this.handleSubmitFile = this.handleSubmitFile.bind(this);
@@ -93,7 +94,7 @@ export default class Profilesetup extends Component {
     //==================================  Detail of Hashtag List  ==============================
 
     AllHashtagListAPI() {
-        axios.get(`https://freedomcells.net/freedomcell/api/users/interest_list`, {}).then((res) => {
+        axios.get(`${process.env.REACT_APP_URL}/api/users/interest_list`, {}).then((res) => {
             //on success
             this.codeDataHashtagList = res.data.code
             if (this.codeDataHashtagList === true) {
@@ -179,6 +180,7 @@ export default class Profilesetup extends Component {
                 .then(res => {
                     
                     if(res.data.code === true){
+                        console.log(res.data)
                         Cookies.set('name', res.data);
                         window.location.reload(true);
                         window.location.hash = '/dashboard'
@@ -192,14 +194,7 @@ export default class Profilesetup extends Component {
                 })
         // }
     }
-
-
-
     render() {
-
-
-
-
         return (
 
             <>

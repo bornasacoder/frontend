@@ -105,7 +105,7 @@ export default class Wallet extends Component {
         this.state.fees = this.state.fees2
         delete this.state.walletBalance
 
-        axios.post('https://freedomcells.net/freedomcell/api/users/coin_transfer', data,{headers})
+        axios.post(`${process.env.REACT_APP_URL}/api/users/coin_transfer`, data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {
@@ -165,7 +165,7 @@ export default class Wallet extends Component {
         delete this.state.currency
 
 
-        axios.post('https://freedomcells.net/freedomcell/api/users/withdraw_eth', data,{headers})
+        axios.post(`${process.env.REACT_APP_URL}/api/users/withdraw_eth`, data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {
@@ -210,7 +210,7 @@ export default class Wallet extends Component {
         delete this.state.walletBalance
 
 
-        axios.post('https://freedomcells.net/freedomcell/api/users/buy_token', data,{headers})
+        axios.post(`${process.env.REACT_APP_URL}/api/users/buy_token`, data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {
@@ -264,7 +264,7 @@ export default class Wallet extends Component {
 
 
 
-        axios.post('https://freedomcells.net/freedomcell/api/users/withdraw_token', data,{headers})
+        axios.post(`${process.env.REACT_APP_URL}/api/users/withdraw_token`, data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {
@@ -300,7 +300,7 @@ export default class Wallet extends Component {
 
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`https://freedomcells.net/freedomcell/api/users/wallet_balance`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/wallet_balance`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataWalletBalance = res.data.code
             if (this.codeDataWalletBalance === true) {
@@ -326,7 +326,7 @@ export default class Wallet extends Component {
 
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`https://freedomcells.net/freedomcell/api/users/trx_type_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/trx_type_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataTransactionType = res.data.code
             if (this.codeDataTransactionType === true) {
@@ -352,7 +352,7 @@ export default class Wallet extends Component {
 
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`https://freedomcells.net/freedomcell/api/users/transaction_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'trx_type_id': '0' },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/transaction_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'trx_type_id': '0' },{headers}).then((res) => {
             //on success
             this.codeDataTransactionList = res.data.code
             if (this.codeDataTransactionList === true) {
@@ -441,7 +441,7 @@ export default class Wallet extends Component {
 
             $('#main_loader').show();
             $('#root').css('opacity', '0.5');
-            axios.post(`https://freedomcells.net/freedomcell/api/users/transaction_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'trx_type_id': a },{headers}).then((res) => {
+            axios.post(`${process.env.REACT_APP_URL}/api/users/transaction_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'trx_type_id': a },{headers}).then((res) => {
                 //on success
                 this.codeDataTransactionList = res.data.code
 

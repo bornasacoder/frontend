@@ -21,6 +21,7 @@ const initialState = {
     passwordError: '',
     confirmpasswordError: '',
     confirmpassword1Error: '',
+
 }
 
 export default class Header extends Component {
@@ -116,9 +117,9 @@ export default class Header extends Component {
             const data = this.state
 
 
-            axios.post('https://freedomcells.net/freedomcell/api/users/register', data, { headers })
+            axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data, { headers })
                 .then(response => {
-                    console.log(response)
+
                     if (response.data.code === true) {
                         toastr.success(response.data.message, { displayDuration: 3000 })
                         this.setState({
@@ -139,7 +140,6 @@ export default class Header extends Component {
                 })
 
                 .catch(err => {
-                    console.log(err)
                     this.setState({
                         loading: false
                     })
@@ -175,31 +175,27 @@ export default class Header extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <Link className="navbar-brand" to="/" onClick={this.loginPage}>
-                            {/* <img className="img-responsive" alt="Notjing" src="logo_freedom_white.png" /> */}
-                            <img className="img-responsive" alt="Notjing" src="/new-logo2.png"style={{width:"100px",height:"70px",borderRadius:"100%"}} />
-                            </Link>
+                            <Link className="navbar-brand" to="/" onClick={this.loginPage}><img className="img-responsive" alt="Notjing" src="logo_freedom_white.png" /></Link>
                         </div>
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                         <Link to="/login" >
                             <ul className="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                                    <li className="gold"><a href="javasript:void(0);"><button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px' }}  ><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Login</div></button></a></li>
+                                <li className="gold"><a href="javasript:void(0);"><button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button></a></li>
                             </ul>
-                        </Link>
-                        <Link to="/register" >
-                            <ul className="nav navbar-nav navbar-right hidden-xs hidden-sm">
-                                    <li className="gold"><a href="javasript:void(0);"><button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px' }}  ><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button></a></li>
+                            <ul id="navigation" className="nav navbar-nav navbar-right">
+
+                                <li><Link to="/" onClick={this.loginPage}>Login</Link></li>
                             </ul>
-                        </Link>
-       
+                            <ul className="nav navbar-nav navbar-right visible-xs visible-sm">
+                                <li className="gold" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }} ><a href="javasript:void(0);" data-toggle="modal" data-target="#pop-register">Register</a></li>
+                            </ul>
                         </div>
 
                     </div>
                 </nav>
                 {/* <!-- NAVIGATION --> */}
 
-                {/* <div id="pop-register" className="modal fade" role="dialog">
+                <div id="pop-register" className="modal fade" role="dialog">
                     <div className="modal-dialog" style={{ top: '80px' }}>
 
                         <div className="modal-content">
@@ -251,7 +247,7 @@ export default class Header extends Component {
                         </div>
 
                     </div>
-                </div> */}
+                </div>
             </>
         )
     }

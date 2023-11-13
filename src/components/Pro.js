@@ -49,7 +49,7 @@ export default class Pro extends Component {
 
     planPriceAPI() {
 
-        axios.post(`https://freedomcells.net/freedomcell/api/users/plan_price`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/plan_price`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataPlanPrice = res.data.code
             if (this.codeDataPlanPrice === true) {
@@ -80,7 +80,7 @@ export default class Pro extends Component {
             // })
             this.state.cheeseIsReady = 'm'
         }
-        axios.post('https://freedomcells.net/freedomcell/api/users/plan_update', { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'plan_id': this.state.listPlan.id,'duration':this.state.cheeseIsReady },{headers})
+        axios.post(`${process.env.REACT_APP_URL}/api/users/plan_update`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'plan_id': this.state.listPlan.id,'duration':this.state.cheeseIsReady },{headers})
             .then(response => {
                 if (response.data.code === true) {
                     toastr.success(response.data.message, { displayDuration: 30000 })

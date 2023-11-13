@@ -117,7 +117,7 @@ export default class Headerhome extends Component {
             const data = this.state
 
 
-            axios.post('https://freedomcells.net/freedomcell/api/users/register', data,{headers})
+            axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data,{headers})
                 .then(response => {
 
                     if (response.data.code === true) {
@@ -185,13 +185,14 @@ export default class Headerhome extends Component {
                                             {/* <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button> */}
                                             <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }}><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>
                                                 <Link to="/allprojectslist" onClick={this.loginPage}> All Projects</Link> </div></button>
-                                        </> : <> 
-                                                <Link to="/register"><button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }}><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button></Link>
+                                        </> : <> <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }} data-toggle="modal" data-target="#pop-register"><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>Register</div></button>
                                                 <button className="btn12 btn-gradient outline-button" style={{ marginBottom: '0px', marginRight: '10px' }}><div style={{ background: '#1C589B', transition: 'all 0.3s' }}>
-                                                    <Link to="/allprojectslist" onClick={this.loginPage}> All Projects</Link> </div>
-                                                </button>
+                                                    <Link to="/allprojectslist" onClick={this.loginPage}> All Projects</Link> </div></button>
                                             </>
                                         }
+
+
+
                                     </a></li>
                             </ul>
                             {/* <ul id="navigation" className="nav navbar-nav navbar-right">

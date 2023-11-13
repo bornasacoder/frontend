@@ -59,8 +59,6 @@ import votingDetail from './components/Votingdetail'
 
 
 import { HashRouter, Route, Switch } from 'react-router-dom'
-import Register from './directives/register';
-import Login from './directives/login';
 // "homepage": "https://www.freedomcells.net/",
 // "proxy": "https://www.freedomcells.net/",
 
@@ -74,8 +72,6 @@ function App() {
           
           <Route path="/" exact component={Home} />
           <Route path="/Login=:id" component={Home1} />
-          <Route path="/register"  component={Register} />
-          <Route path="/login"  component={Login} />
           <Route path="/header" component={Header} />
           <Route path="/footer" component={Footer} />
           <Route path="/dashboard" component={Dashboard} />

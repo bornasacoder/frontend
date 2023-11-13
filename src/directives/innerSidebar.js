@@ -60,7 +60,7 @@ export default class InnerSidebar extends Component {
     groupAPI() {
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`https://freedomcells.net/freedomcell/api/users/group_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/group_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             this.codeDataGroup = res.data.code
             if (this.codeDataGroup === true) {
                 this.setState({
@@ -99,7 +99,7 @@ export default class InnerSidebar extends Component {
     showDisplayNameAPI() {
         $('#main_loader').show();
         $('#root').css('opacity', '0.5');
-        axios.post(`https://freedomcells.net/freedomcell/api/users/show_display_name`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/show_display_name`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             this.codeDataDisplayName = res.data.code
             if (this.codeDataDisplayName === true) {
                 this.setState({
@@ -117,7 +117,7 @@ export default class InnerSidebar extends Component {
 
     BannerImageAPI() {
  
-        axios.post(`https://freedomcells.net/freedomcell/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/avatar_banner`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key }, { headers }).then((res) => {
             //on success
             this.codeDataAvatarBanner = res.data.code
             if (this.codeDataAvatarBanner === true) {

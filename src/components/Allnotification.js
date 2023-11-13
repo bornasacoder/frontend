@@ -31,7 +31,7 @@ export default class AllNotifications extends Component {
 
     notificationList() {
         
-        axios.post(`https://freedomcells.net/freedomcell/api/users/notification_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/notification_list`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             this.codeDataNotification = res.data.code
             if (this.codeDataNotification === true) {
                 this.notifCount = res.data

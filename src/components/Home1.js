@@ -118,7 +118,7 @@ export default class Home1 extends Component {
             const data = this.state
 
 
-            axios.post('https://freedomcells.net/freedomcell/api/users/login', data,{ headers })
+            axios.post(`${process.env.REACT_APP_URL}/api/users/login`, data,{ headers })
                 .then(response => {
 
                     if (response.data.code === true) {

@@ -18,9 +18,9 @@ const headers = {
 export default class DiscoveryGroups extends Component {
 
 
-    // custom_file_upload_url = `https://freedomcells.net/freedomcell/api/users/group_create`;
-    // custom_file_upload_url1 = `https://freedomcells.net/freedomcell/api/users/post_comment`;
-    // // custom_file_upload_url2 = `https://freedomcells.net/freedomcell/api/users/post_comment_reply`;
+    // custom_file_upload_url = `${process.env.REACT_APP_URL}/api/users/group_create`;
+    // custom_file_upload_url1 = `${process.env.REACT_APP_URL}/api/users/post_comment`;
+    // // custom_file_upload_url2 = `${process.env.REACT_APP_URL}/api/users/post_comment_reply`;
 
     constructor(props) {
         super(props);
@@ -48,7 +48,7 @@ export default class DiscoveryGroups extends Component {
 
     groupAPI() {
   
-        axios.post(`https://freedomcells.net/freedomcell/api/users/all_group_list`, { 'user_id': this.loginData.id,  'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/all_group_list`, { 'user_id': this.loginData.id,  'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataGroup = res.data.code
             if (this.codeDataGroup === true) {
@@ -72,7 +72,7 @@ export default class DiscoveryGroups extends Component {
 
     projectAPI() {
        
-        axios.post(`https://freedomcells.net/freedomcell/api/users/project_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
+        axios.post(`${process.env.REACT_APP_URL}/api/users/project_list`, { 'user_id': this.loginData.id, 'view_user_id': this.loginData.id, 'api_key': this.loginData.api_key },{headers}).then((res) => {
             //on success
             this.codeDataProject = res.data.code
             if (this.codeDataProject === true) {
@@ -112,7 +112,7 @@ export default class DiscoveryGroups extends Component {
                 {
                     label: 'Yes',
                     onClick: () =>
-                        axios.post(`https://freedomcells.net/freedomcell/api/users/group_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'group_id': id },{headers}).then((res) => {
+                        axios.post(`${process.env.REACT_APP_URL}/api/users/group_delete`, { 'user_id': this.loginData.id, 'api_key': this.loginData.api_key, 'group_id': id },{headers}).then((res) => {
                             $('#main_loader').show();
                             $('#root').css('opacity', '0.5');
 

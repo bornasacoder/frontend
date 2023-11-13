@@ -60,7 +60,7 @@ function GliderSlider() {
                                     <li className='liDiv'><a href="javascript:;" rel="noopener noreferrer"><img alt="Fox News" src="icon/blockchain.png" className='imgDiv'/><p>Blockchain</p></a></li>
                                     <li className='liDiv'><a href="javascript:;" rel="noopener noreferrer"><img alt="Independent" src="icon/transformation.jpg" className='imgDiv' /><p>Transformation</p></a></li>
                                     <li className='liDiv'><a href="javascript:;" rel="noopener noreferrer"><img alt="The Joe Rogan Experience" src="icon/power2.jpg" className='imgDiv' /><p>Collective Power</p></a></li>
-                                    {/* <li className='col-lg-2 col-md-3 col-sm-6 col-12'><a href="javascript:;" rel="noopener noreferrer"><img alt="The Joe Rogan Experience" src="icon/vote3.png" /><p>Voting</p></a></li> */} */}
+                                    {/* <li className='col-lg-2 col-md-3 col-sm-6 col-12'><a href="javascript:;" rel="noopener noreferrer"><img alt="The Joe Rogan Experience" src="icon/vote3.png" /><p>Voting</p></a></li> */} 
                                     {/* <li><a href="javascript:;" rel="noopener noreferrer"><img alt="Reuters" className="img_blck" src="icon/Cryptocurrency_decentralization-23-512.png" /><p>transformation</p></a></li> */}
                                     {/* <li><a href="javascript:;" rel="noopener noreferrer"><img alt="npr" src="icon/Projects_icon.png" /><p>Projects</p></a></li> */}
                                 </ul>
