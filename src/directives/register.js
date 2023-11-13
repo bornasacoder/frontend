@@ -10,14 +10,14 @@ function Register() {
         <div style={{display:"flex",justifyContent:"center",alignItems:"center",width:"100%",marginTop:""}}>
             <div className='loginContentDiv' style={{width:"90%",display:"flex",marginTop:"100px",height:"100%"}}>
                 <div className='loginContentDivVideo' style={{width:"100%"}}>
-                        <video autoPlay loop muted className='loginContentDivVideo2'>
+                        <video autoPlay loop muted className='loginContentDivVideo2' style={{width:"100%"}}>
                             <source
                                 src='/login-video.mp4'
                                 type='video/mp4'
                             />
                         </video>
                 </div>
-                <div className="modal-content loginContentDiv2" style={{width:"50%"}}>
+                <div className="modal-content loginContentDiv2" style={{width:"500px",marginTop:"10px"}}>
                             <div className="modal-header1">
                                 <button type="button" style={{
                                     marginRight: '10px',

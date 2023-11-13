@@ -98,6 +98,7 @@ code {
   }
   }
 
+  
   @media only screen and (max-width: 800px) {
  
     .loginContentDiv{
@@ -107,10 +108,18 @@ code {
       width: 100%!important;
     }
     .loginContentDivVideo{
-      width: "90%";
+      width: "100%" !important;
     }
     .loginContentDivVideo2{
         width: 100%;
     }
+
+    .loginpageDiv{
+      width: 100%;
+      
     }
+    .login-div{
+      width: 100%;
+    }
+}
   
