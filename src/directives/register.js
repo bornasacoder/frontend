@@ -4,8 +4,10 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import toastr from 'reactjs-toastr';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function Register() {
+    const history = useHistory()
     const initialValues = {
         full_name: '',
         email: '',
@@ -31,7 +33,9 @@ function Register() {
         try{
             const data = values
             const response =await axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data,{headers} )
-            console.log(response)
+            if(response){
+                history.pushState("/")
+            }
         } catch(err){
             console.log(err)
         }

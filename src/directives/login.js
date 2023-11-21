@@ -5,8 +5,10 @@ import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import toastr from 'reactjs-toastr';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function Login() {
+    const history = useHistory()
     const initialValues = { 
         email: '',
         password: '',
@@ -25,7 +27,9 @@ function Login() {
         try{
             const data = values
             const response = await axios.post(`${process.env.REACT_APP_URL}/api/users/login`, data,{headers})
-            console.log(response)
+            if(response){
+                history.push("/")
+            }
         } catch(err){
             console.log(err)
         }
@@ -56,7 +60,7 @@ function Login() {
                                                         <div className="head">
                                                             <h3 className="purple oR m0">Join collective Transformation</h3>
                                                         </div>
-                                                        <form 
+                                                        <div 
                                                         onSubmit={formik.handleSubmit}
                                                         >
                                                             <div className="body">
@@ -90,7 +94,7 @@ function Login() {
                                                                 //  disabled={!this.state.email || !this.state.password} 
                                                                  className="btn btn-gradient W100 pull-right">Login!</button>
                                                             </div>
-                                                        </form>
+                                                        </div>
                                                     </div>
                                                 </div>
             </div>

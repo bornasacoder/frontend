@@ -232,6 +232,9 @@ export default class Home extends Component {
                                                                 </Link>
                                                                 <button type="submit" disabled={!this.state.email || !this.state.password} className="btn btn-gradient W100 pull-right">Login!</button>
                                                             </div>
+                                                            <Link to="/register" className="forgot pull-left ml-3   ">
+                                                                <small style={{ fontSize: '110%' }}>Don't have an account? SignUp</small>
+                                                            </Link>
                                                         </form>
                                                     </div>
                                                 </div>
