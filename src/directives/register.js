@@ -23,22 +23,32 @@ function Register() {
       });
 
       const headers = {
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE',
-        'Access-Control-Allow-Headers': 'Content-Type, Authorization',
-     };
+        'Content-Type': 'text/plain',
+      };
 
     const onSubmit = async (values) => {
         console.log(values)
-        try{
+        // try{
             const data = values
-            const response =await axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data,{headers} )
-            if(response){
-                history.pushState("/")
-            }
-        } catch(err){
-            console.log(err)
-        }
+            axios.post(`http://localhost/backend/api/users/register`, data,{headers})
+            .then(response => {
+
+                if (response.data.code === true) {
+                    toastr.success(response.data.message, { displayDuration: 3000 })
+                  
+                    window.location.hash = '/login'
+                }
+
+                else if (response.data.code === false) {
+                    toastr.error(response.data.message, { displayDuration: 3000 })
+
+                }
+
+            })
+
+            .catch(err => {
+              console.log(err)
+            })
       }
       // eslint-disable-next-line react-hooks/rules-of-hooks
       const formik = useFormik({

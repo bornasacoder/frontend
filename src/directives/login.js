@@ -6,6 +6,7 @@ import { useFormik } from 'formik';
 import toastr from 'reactjs-toastr';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 function Login() {
   const history = useHistory();
@@ -21,26 +22,52 @@ function Login() {
   });
 
   const headers = {
-    'Content-Type': 'application/json',
+    'Content-Type': 'text/plain',
   };
 
   const handleSubmit = async (values) => {
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_URL}/api/users/login`, values, {
-        headers,
-      });
+    // try {
+    //   const response = await axios.post(`${process.env.REACT_APP_URL}/api/users/login`, values, {
+    //     headers,
+    //   });
 
-      // Assuming the API response has a success flag, adjust this based on your API response structure
-      if (response.data && response.data.success) {
-        toastr.success('Login successful'); // Use toastr or any other notification library
-        history.push('/');
-      } else {
-        toastr.error('Login failed'); // Adjust based on your API response
-      }
-    } catch (err) {
-      console.error(err);
-      toastr.error('An error occurred'); // Adjust based on your error handling
-    }
+    //   // Assuming the API response has a success flag, adjust this based on your API response structure
+    //   if (response?.data && response?.data?.success) {
+    //     toastr.success('Login successful'); // Use toastr or any other notification library
+    //     history.push('/');
+    //   } else {
+    //     toastr.error('Login failed'); // Adjust based on your API response
+    //   }
+    // } catch (err) {
+    //   console.error(err);
+    //   toastr.error('An error occurred'); // Adjust based on your error handling
+    // }
+    await axios.post(`${process.env.REACT_APP_URL}/api/users/login`, values, { headers })
+    .then(response => {
+
+        if (response.data.code === true) {
+            toastr.success('Sucess', { displayDuration: 3000 })
+            Cookies.set('name', response.data);
+
+           
+            if (response?.data?.user_data?.is_enable_google_auth_code === '0') {
+                
+                window.location.hash = '/dashboard'
+            }
+            else if (response?.data?.user_data?.is_enable_google_auth_code === '1') {
+                // window.location.reload(true);
+                window.location.hash = '/twofa'
+            }
+
+        }
+        else if (response?.data?.code === false) {
+            toastr.error(response.data.message, { displayDuration: 3000 })            
+        }
+    })
+
+    .catch(err => {
+        console.log(err)
+    })
   };
 
   const formik = useFormik({

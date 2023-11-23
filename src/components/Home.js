@@ -50,10 +50,7 @@ export default class Home extends Component {
         }
 
     }
-
-
     // validation check 
-
     validate = () => {
         let emailError = '';
         let passwordError = '';
@@ -92,12 +89,7 @@ export default class Home extends Component {
 
     //submit the data
     async submitForm(e) {
-
-
-
         e.preventDefault()
-        
-
         const isValid = this.validate();
         if (isValid) {
 
