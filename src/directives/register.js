@@ -30,7 +30,7 @@ function Register() {
         console.log(values)
         // try{
             const data = values
-            axios.post(`http://localhost/backend/api/users/register`, data,{headers})
+            axios.post(`${process.env.REACT_APP_URL}/api/users/register`, data,{headers})
             .then(response => {
 
                 if (response.data.code === true) {
