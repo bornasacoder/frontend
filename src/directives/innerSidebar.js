@@ -13,7 +13,8 @@ export default class InnerSidebar extends Component {
         let data = Cookies.getJSON('name');
         this.loginData = data.user_data
         this.state = {
-            listGroup: []
+            listGroup: [],
+            openSideBar:false
         }
     }
 
@@ -137,7 +138,7 @@ export default class InnerSidebar extends Component {
 
     render() {
         return (
-            <div className="col-lg-3">
+            <div className="col-lg-3 ">
                 <aside className="sidebar fixed">
                     <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '307px', marginLeft: '-10px' }}>
                         <br />

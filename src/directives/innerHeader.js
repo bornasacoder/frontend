@@ -6,6 +6,8 @@ import axios from 'axios';
 import toastr from 'reactjs-toastr';
 import { Notifications } from 'react-push-notification';
 import addNotification from 'react-push-notification';
+import { useState } from 'react';
+import zIndex from '@material-ui/core/styles/zIndex';
 const headers = {
     'Content-Type': 'text/plain'
  };
@@ -23,7 +25,8 @@ export default class InnerHeader extends Component {
         this.state = {
             main_search_val: '',
             searchData: [],
-            NotifData: []
+            NotifData: [],
+            open:false
         }
     }
 
@@ -285,39 +288,61 @@ export default class InnerHeader extends Component {
         }, 1000);
     }
 
+    handleOpen = ()=>{
+        this.setState({open:!this.state.open})
+    }
     render() {
         return (
             <div className="topbar stick stickClass">
-                <div className="logo text-right innerLogo">
-                    <Link title="" to="/" onClick={this.loginPage}><img src="https://freedomcells.net/logo_freedom.png" alt="" /></Link>
+                <span className="logo text-right innerLogo">
+                    {/* <Link title="" to="/" onClick={this.loginPage}><img src="https://freedomcells.net/logo_freedom.png" alt="" /></Link> */}
+                    <Link title="" to="/" onClick={this.loginPage}><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" style={{width:"50px",height:"50px",borderRadius:"50%",textAlign:"initial"}}/></Link>
 
-                </div>
+                </span>
                 <Notifications />
 
 
-                <div className="top-area">
-
-                    <span className="crowd_fund" style={{ marginLeft: '300px' }}>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', marginRight: '10px' }}>Vtube</button>
+                    {this.state.open && <div className='list-group' style={{position:"fixed",right:"0px",top:"80px",padding:"20px",backgroundColor:"#fff"}}>
+                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Vtube</button>
                         <Link to="/MyVotes">
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', marginRight: '10px' }}>Vote</button>
+                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Vote</button>
                         </Link>
                         <Link to="/allprojects">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', marginRight: '10px' }}>CrowdFund</button>
+                            <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>CrowdFund</button>
                         </Link>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', marginRight: '10px' }}>Market</button>
+                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Market</button>
                         <Link to="/discoverygroups">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', marginRight: '10px' }}>Groups</button>
+                            <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Groups</button>
+                        </Link>
+                    </div>}
+
+                    <span className="crowd_fund" >
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Vtube</button>
+                        <Link to="/MyVotes">
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Vote</button>
+                        </Link>
+                        <Link to="/allprojects">
+                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>CrowdFund</button>
+                        </Link>
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Market</button>
+                        <Link to="/discoverygroups">
+                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Groups</button>
                         </Link>
                         {/* <Link to="/BuyEth">
 
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px' }} >BuyETH</button>
-                        </Link> */}
+<button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px' }} >BuyETH</button>
+</Link> */}
                     </span>
 
 
-                    <ul className="setting-area" >
+<div className="top-area">
+
+
+
+
+                    <ul className="setting-area"  style={{display:"flex",listStyle:"none",alignItems:"center"}}>
                         {/* <li id="notification_bell" onClick={this.abc}>kkk</li> */}
+
                         <li >
                             <a href="javascript:;" title="Home" data-ripple="" className="head-menu menu-search">
                                 <i className="fa fa-search" aria-hidden="true"></i>
@@ -474,9 +499,7 @@ export default class InnerHeader extends Component {
                                 <a href="javascript:;" title="">Hindi</a>
                             </div>
                         </li>
-                    </ul>
-
-                    <div className="user-img">
+                        <div className="user-img">
                         <img src={this.state?.bannerImage?.avatar} alt="" />
                         <span className="status f-online"></span>
                         <div className="user-setting" style={{ marginRight: '30px' }}>
@@ -492,9 +515,16 @@ export default class InnerHeader extends Component {
                             <Link to="/" onClick={this.Logout} title=""><i className="ti-power-off"></i>log out</Link>
                         </div>
                     </div>
+                    
+                   <div className='sidebar-list' style={{color:"#9A9A9A",zIndex:"999"}}>
+                   <i  className="fa fa-list" aria-hidden="true" style={{fontSize:"20px"}} onClick={this.handleOpen}></i>
+                    </div> 
+                    </ul>
+                   
+
                     {/* <span className="ti-menu main-menu" data-ripple=""><span className="ripple"><span className="ink" style={{ height: '20px', width: '20px', backgroundColor: 'rgb(217, 217, 217)', top: '-3px', left: '-1.39062px' }}></span></span></span> */}
                     {/* <i className="fa fa-bars font_login" aria-hidden="true"></i> */}
-                    <div className="side-panel">
+                    {/* <div className="side-panel">
                         <h4 className="panel-title">General Setting</h4>
                         <form method="post">
                             <div className="setting-row">
@@ -525,7 +555,7 @@ export default class InnerHeader extends Component {
                         </form>
 
 
-                    </div>
+                    </div> */}
                 </div>
 
 

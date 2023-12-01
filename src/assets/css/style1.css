@@ -56,6 +56,12 @@ Last change:  26/August/19
 /*===============
 ***General Styling 
 ===============*/
+
+
+
+
+
+
 html,body{
 	font-family: "Roboto", "Segoe Ui";
 }
@@ -658,12 +664,14 @@ header.sticky {
 
 .topbar {
     background: #fff;
-    display: block;
-    height: 80px;
-    padding: 0 20px;
+  display: flex;
+    padding: 20 20px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     z-index: 999;
     position: relative;
+    justify-content:space-between ;
+    align-items: center;
+    gap: 30px;
 }
 
 .logo {
@@ -682,11 +690,13 @@ header.sticky {
 }
 
 .top-area {
-    display: inline-block;
-    text-align: right;
-    vertical-align: middle;
-    width: 84%;
+   display: flex;
+   justify-content: space-between;
+   /* width: 70%; */
+   align-items: center;
+
 }
+
 
 .top-area > ul {
     display: inline-block;
@@ -10908,4 +10918,23 @@ font-size: 18px;
 
 .suggested_channele{
     border-radius: 50%;
+}
+@media screen  and (max-width: 600px) {
+    .top-area{
+        flex-direction: column-reverse;
+        /* width: 100%; */
+        /* padding: 20px 0px; */
+        gap: 10px;
+    }
+   
+    .topbar{
+/* align-items: start; */
+gap: 5px;
+    }
+}
+@media screen  and (max-width: 1000px) {
+    .sidebar {
+        display: none;
+       
+    }
 }

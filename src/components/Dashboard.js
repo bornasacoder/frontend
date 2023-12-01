@@ -77,7 +77,7 @@ export default class Dashboard extends Component {
             suggestedChannelList: [],
             showVotingList: [],
             option_id: '',
-            showVotingListGraph: []
+            showVotingListGraph: [],
         }
 
 
@@ -97,7 +97,7 @@ export default class Dashboard extends Component {
         var urlGroup = window.location.hash.split('groupdetail/')[1]
 
         this.setState({
-            urlGroup: urlGroup
+            urlGroup: urlGroup,
         })
 
         this.timelineAPI()
@@ -1582,9 +1582,7 @@ export default class Dashboard extends Component {
                                     <div className="col-lg-12">
                                         <div className="row merged20" id="page-contents">
                                             {/* //================== Sidebar */}
-
                                             <InnerSidebar />
-
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-6 setStick" >
                                                 <div className="central-meta new-pst" >
