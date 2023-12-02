@@ -6,7 +6,7 @@ import $ from 'jquery'
 const headers = {
     'Content-Type': 'text/plain'
 };
-export default class InnerSidebar extends Component {
+export default class InnerSidebar1 extends Component {
 
     constructor(props) {
         super(props)
@@ -14,7 +14,6 @@ export default class InnerSidebar extends Component {
         this.loginData = data.user_data
         this.state = {
             listGroup: [],
-            openSideBar:false
         }
     }
 
@@ -138,9 +137,9 @@ export default class InnerSidebar extends Component {
 
     render() {
         return (
-            <div className="col-lg-3 col-md-0 ">
+            <div className=" navsidebar ">
                 <aside className="sidebar fixed ">
-                    <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '307px', marginLeft: '-10px' }}>
+                    <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '100%',  }}>
                         <br />
                         <ul className="naves">
                             <li id="li_self">

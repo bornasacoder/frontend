@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import logo from './logo.svg';
 import './assets/jquery.emojiarea.css'
 // import './assets/stylesheet.css'
@@ -61,10 +61,14 @@ import votingDetail from './components/Votingdetail'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import Login from './directives/login';
 import Register from './directives/register';
+import InnerSidebar1 from './directives/innerSidebar1';
 // "homepage": "https://www.freedomcells.net/",
 // "proxy": "https://www.freedomcells.net/",
 
 function App() {
+
+  const [open,setOpen] = useState(false)
+
   return (
 
     <HashRouter>
@@ -79,7 +83,7 @@ function App() {
           <Route path="/header" component={Header} />
           <Route path="/footer" component={Footer} />
           <Route path="/dashboard" component={Dashboard} />
-          <Route path="/innerHeader" component={InnerHeader} />
+          <Route path="/innerHeader" component={InnerHeader} open={open} />
           <Route path="/innerSidebar" component={InnerSidebar} />
           <Route path="/rightSidebar" component={RightSidebar} />
           <Route path="/timeLine/:id/:post_id" component={Timeline} />

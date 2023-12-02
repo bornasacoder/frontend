@@ -18910,9 +18910,12 @@ a.text-dark:hover {
 
 .form-group,
 .form-radio {
-	position: relative;
+	/* position: relative;
 	margin-top: 2.25rem;
-	margin-bottom: 2.25rem
+	margin-bottom: 2.25rem */
+	display: flex;
+	gap: 20px;
+	align-items: center;
 }
 
 .form-inline>.btn,
@@ -18937,7 +18940,7 @@ a.text-dark:hover {
 
 .checkbox .form-help {
 	position: relative;
-	margin-bottom: 1rem
+	/* margin-bottom: 1rem */
 }
 
 .form-radio .form-help {
@@ -19087,7 +19090,7 @@ a.text-dark:hover {
 }
 
 .radio {
-	margin-bottom: 1rem
+	/* margin-bottom: 1rem */
 }
 
 .radio .check-box {
@@ -19142,7 +19145,7 @@ a.text-dark:hover {
 }
 
 .checkbox {
-	margin-top: 1rem;
+	/* margin-top: 1rem; */
 	margin-bottom: 1rem
 }
 
@@ -19219,7 +19222,7 @@ a.text-dark:hover {
 
 .checkbox+.checkbox,
 .radio+.radio {
-	margin-top: 1rem
+	/* margin-top: 1rem */
 }
 
 .has-error .legend.legend,

@@ -217,12 +217,13 @@ export default class Createproject extends Component {
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-8 setStick">
                                                 <div className="central-meta new-pst">
-                                                    <div className="new-postbox">
-                                                        <div className="m-modalV2__inner m-groups__create m-border">
+                                                    <div className="new-postbox" >
+                                                        <div className="m-modalV2__inner m-groups__create m-border p-4" >
+                                                            
+                                                            <div className="m-modalV2__body m-formWrapper">
                                                             <div className="m-modalV2__header m-groupsCreate__header">
                                                                 <h2 className="m-modalV2Header__title"> Create Project </h2>
                                                             </div>
-                                                            <div className="m-modalV2__body m-formWrapper">
                                                                 <form onSubmit={this.handleSubmitFile} className="m-groupsCreate__form m-formWrapper m-formLayout--buttonRight ">
                                                                     <div className="m-form__fieldsContainer">
                                                                         <div className="m-form__field--text stretchedField">
@@ -232,31 +233,35 @@ export default class Createproject extends Component {
                                                                         </div>
                                                                     </div>
                                                                     <div className="m-form__fieldsContainer">
-                                                                        <div className="m-form__field--text">
                                                                             <div className="m-form__row--label"><label>Avatar and Banner</label></div>
-                                                                            <div className="m-channelEdit__imagery">
+                                                                        <div className="m-form__field--text" >
+                                                                            {/* <div style={{display:"flex",gap:"20px"}}> */}
+                                                                            <div className="m-channelEdit__imagery" style={{padding:"10px",display:"flex",gap:"20px"}}>
+                                                                                <div className=''>
                                                                                 {this.state.image_preview ? <img src={this.state.image_preview} alt="No Data" /> : ''}
 
-                                                                                <label htmlFor="channel-v2-edit-banner" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadBanner">
-                                                                                    <m-icon iconid="file_upload">
-                                                                                        <i className="fa fa-upload" style={{ fontSize: '1em' }}></i>
-                                                                                    </m-icon>
-                                                                                    <input data-cy="minds-groups-create-banner" id="channel-v2-edit-banner" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview} type="file" />
-                                                                                </label>
-                                                                                <div className="m-channelEditImagery__avatar">
+<label htmlFor="channel-v2-edit-banner" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadBanner">
+    <m-icon iconid="file_upload">
+        <i className="fa fa-upload" style={{ fontSize: '1em' }}></i>
+    </m-icon>
+    <input data-cy="minds-groups-create-banner" id="channel-v2-edit-banner" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview} type="file" />
+</label>
+                                                                                </div>
+                                                                                
+                                                                                <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",}}>
                                                                                     <label htmlFor="channel-v2-edit-avatar" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadAvatar">
                                                                                         <m-icon iconid="file_upload">
                                                                                             <i className="fa fa-upload" style={{ fontSize: '1em' }}></i>
                                                                                             {this.state.image_preview1 ? <img src={this.state.image_preview1} alt="No Data" style={{ height: '148px', width: '217px', left: '229px' }} /> : ''}
-
-
                                                                                         </m-icon>
                                                                                         <input id="channel-v2-edit-avatar" type="file" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview1} />
                                                                                     </label>
                                                                                 </div>
                                                                             </div>
+                                                                            
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
+                                                                    {/* </div> */}
                                                                     <div className="m-form__fieldsContainer">
                                                                         <div className="m-form__field--text stretchedField">
                                                                             <div className="m-form__row--label"><label>Description</label></div>

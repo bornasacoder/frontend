@@ -1584,7 +1584,7 @@ export default class Dashboard extends Component {
                                             {/* //================== Sidebar */}
                                             <InnerSidebar />
                                             {/* <!-- sidebar --> */}
-                                            <div className="col-lg-6 setStick" >
+                                            <div className="col-lg-6  setStick" >
                                                 <div className="central-meta new-pst" >
                                                     <div className="new-postbox">
                                                         <figure>
@@ -2255,7 +2255,7 @@ export default class Dashboard extends Component {
 
 
 
-                                                <div m-pagelayout__pane="right" className="m-newsfeed--boost-sidebar m-newsfeed__sidebar m-pageLayout__pane--right ng-star-inserted">
+                                                <div m-pagelayout__pane="right" className="m-newsfeed--boost-sidebar m-newsfeed__sidebar m-pageLayout__pane--right ng-star-inserted hastagsection">
                                                     <div className="m-pageLayoutPane__inner">
                                                         <div m-stickysidebar="" className="m-pageLayoutPane__sticky"
                                                             style={{ position: 'sticky', top: '95px' }}>

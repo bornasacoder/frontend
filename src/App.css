@@ -214,7 +214,7 @@ i.fa.fa-bars.font_login{
 
 
 .setStick{
-  margin-top: 59px;
+  margin-top: 70px;
 }
 body{
 	background: #fff!important;
@@ -270,6 +270,9 @@ body{
   height: 148px;
   width: 100%;
   object-fit: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .edit-phto11 {
   /* background: rgba(0, 0, 0, 0.7) none repeat scroll 0 0; */
@@ -772,7 +775,7 @@ m-boost--creator-payment-methods h5>span {
   display: block;
   box-sizing: border-box;
   position: relative;
-  padding-left: 40px;
+  /* padding-left: 40px; */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3510,7 +3513,12 @@ body {
 gap: 20px;
 }
 
-@media screen and (max-width: 900px) {
+
+.hastagsection{
+  display: block;
+}
+
+@media screen and (max-width: 1200px) {
   .crowd_fund{
     display: none;
     /* gap: 100px; */
@@ -3525,5 +3533,8 @@ gap: 20px;
   }
   .setting-area{
     gap: 10px;
+  }
+  .hastagsection{
+    display: none;
   }
 }

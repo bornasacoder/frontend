@@ -6,8 +6,7 @@ import axios from 'axios';
 import toastr from 'reactjs-toastr';
 import { Notifications } from 'react-push-notification';
 import addNotification from 'react-push-notification';
-import { useState } from 'react';
-import zIndex from '@material-ui/core/styles/zIndex';
+import InnerSidebar1 from './innerSidebar1';
 const headers = {
     'Content-Type': 'text/plain'
  };
@@ -26,7 +25,7 @@ export default class InnerHeader extends Component {
             main_search_val: '',
             searchData: [],
             NotifData: [],
-            open:false
+            open:this.props.open
         }
     }
 
@@ -302,18 +301,28 @@ export default class InnerHeader extends Component {
                 <Notifications />
 
 
-                    {this.state.open && <div className='list-group' style={{position:"fixed",right:"0px",top:"80px",padding:"20px",backgroundColor:"#fff"}}>
-                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Vtube</button>
+                    {this.state.open && <div className='list-group' style={{position:"fixed",right:"0px",top:"0px",padding:"20px",backgroundColor:"#fff",minHeight:"100vh",zIndex:"1999",width:"100vw"}}>
+                        {/* <div className='d-flex justify-content-end pr-2 ' > */}
+                        {/* </div> */}
+                    <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
+                        <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"10px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vtube</button>
                         <Link to="/MyVotes">
-                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Vote</button>
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vote</button>
                         </Link>
                         <Link to="/allprojects">
-                            <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>CrowdFund</button>
+                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>CrowdFund</button>
                         </Link>
-                        <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Market</button>
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Market</button>
                         <Link to="/discoverygroups">
-                            <button className="list-group-item list-group-item-action" style={{ marginTop:"2px"}} onClick={this.handleOpen}>Groups</button>
+                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Groups</button>
                         </Link>
+                        </div>
+
+                        <div className='mt-2'>
+                            <InnerSidebar1/>
+                        </div>
+                   
                     </div>}
 
                     <span className="crowd_fund" >

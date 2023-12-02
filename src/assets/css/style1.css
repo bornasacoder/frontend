@@ -631,9 +631,8 @@ header.sticky {
 }
 
 .form-radio > .radio {
-    display: inline-block;
-    margin-bottom: 0;
-    width: 15%;
+  display: flex;
+  gap: 10px;
 }
 
 .form-radio {
@@ -1186,6 +1185,15 @@ header.sticky {
     padding-bottom: 20px;
     width: 100%;
 }
+.navsidebar {
+    display: table;
+    float: none;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 100%;
+}
+
+
 
 .sidebar .widget {
     display: inline-block;
@@ -5578,10 +5586,11 @@ li.m-suggestionsSidebarList__item {
     transform: translate(-50%,-50%);
 }
 .m-channelEditImagery__uploadTrigger {
-    position: absolute;
+    /* position: absolute; */
     display: flex;
     align-items: center;
     justify-content: center;
+    /* gap: 30px; */
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -5589,15 +5598,17 @@ li.m-suggestionsSidebarList__item {
     cursor: pointer;
 }
 .m-channelEditImagery__avatar {
-    position: absolute;
+    /* position: absolute;
     top: 50%;
     left: 50px;
     transform: translateY(-50%);
     width: 80px;
+    height: 80px; */
+    /* border-radius: 50%;
+    background: none no-repeat 50% rgba(20, 19, 19, 0.37); */
+    /* background-size: cover; */
+    width: 80px;
     height: 80px;
-    border-radius: 50%;
-    background: none no-repeat 50% rgba(20, 19, 19, 0.37);
-    background-size: cover;
 }
 .m-channelEditImagery__uploadTrigger>m-icon {
     font-size: 17px;
@@ -5612,7 +5623,7 @@ m-icon {
     left: -1px;
     width: 1px;
     height: 1px;
-    opacity: .01;
+    opacity: 0;
 }
 .m-modalV2Header__title {
     color: #4f4f50;
@@ -10932,9 +10943,12 @@ font-size: 18px;
 gap: 5px;
     }
 }
-@media screen  and (max-width: 1000px) {
+@media screen  and (max-width: 1200px) {
     .sidebar {
         display: none;
        
+    }
+    .navsidebar {
+        display: table;
     }
 }
