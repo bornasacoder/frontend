@@ -3036,7 +3036,7 @@
         // Set a video poster
         if (posterType === 'detect') {
           findPoster(poster, function (url) {
-            $wrapper.css('background-image', 'url(' + url + ')');
+            $wrapper.css('', 'url(' + url + ')');
           });
         } else if (posterType !== 'none') {
           $wrapper.css('background-image', 'url(' + poster + '.' + posterType + ')');

@@ -237,25 +237,28 @@ export default class Createproject extends Component {
                                                                         <div className="m-form__field--text" >
                                                                             {/* <div style={{display:"flex",gap:"20px"}}> */}
                                                                             <div className="m-channelEdit__imagery" style={{padding:"10px",display:"flex",gap:"20px"}}>
-                                                                                <div className=''>
+                                                                                
+                                                                                <div className='' style={{}}>
                                                                                 {this.state.image_preview ? <img src={this.state.image_preview} alt="No Data" /> : ''}
 
 <label htmlFor="channel-v2-edit-banner" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadBanner">
     <m-icon iconid="file_upload">
-        <i className="fa fa-upload" style={{ fontSize: '1em' }}></i>
+        <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"30px",left:"30px" }}></i>
     </m-icon>
     <input data-cy="minds-groups-create-banner" id="channel-v2-edit-banner" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview} type="file" />
 </label>
                                                                                 </div>
                                                                                 
-                                                                                <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",}}>
+                                                                                <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",position:"relative"}}>
+                                                                                    <div>
                                                                                     <label htmlFor="channel-v2-edit-avatar" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadAvatar">
                                                                                         <m-icon iconid="file_upload">
-                                                                                            <i className="fa fa-upload" style={{ fontSize: '1em' }}></i>
+                                                                                            <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"50px",left:"30px" }}></i>
                                                                                             {this.state.image_preview1 ? <img src={this.state.image_preview1} alt="No Data" style={{ height: '148px', width: '217px', left: '229px' }} /> : ''}
                                                                                         </m-icon>
                                                                                         <input id="channel-v2-edit-avatar" type="file" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview1} />
-                                                                                    </label>
+                                                                                    </label>  
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             

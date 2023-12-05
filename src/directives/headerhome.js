@@ -172,7 +172,7 @@ export default class Headerhome extends Component {
                                 <span className="icon-bar"></span>
                                 <span className="icon-bar"></span>
                             </button>
-                            <a className="navbar-brand" href=""><img className="img-responsive" alt="Notjing" src="logo_freedom_white.png" /></a>
+                            <a className="navbar-brand" href=""><img className="img-responsive" alt="Notjing" src="https://nftstars.shop/images/Logo3_new.png" style={{height:"80px"}} /></a>
                         </div>
 
                         <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

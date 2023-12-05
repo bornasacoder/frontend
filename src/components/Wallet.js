@@ -566,7 +566,7 @@ export default class Wallet extends Component {
                                                                     <div className="col-sm-6">
                                                                         <div className="row">
 
-                                                                            <table width="375" border="0">
+                                                                            <table width="375" border="0" style={{marginTop:"15px"}}>
                                                                                 <tr>
                                                                                     <td colSpan="3"><span className="style1"><b>Fcell Balance</b></span></td>
                                                                                     <td colSpan="2"><b>{this.state?.walletBalance?.fcell_balance}</b></td>
@@ -947,9 +947,9 @@ export default class Wallet extends Component {
                                                                             <div className="col-md-8">
 
                                                                             </div>
-                                                                            <div className="col-md-4">
+                                                                            <div className="col-md-4" style={{marginTop:"30px"}}>
 
-                                                                                <select className="form-control" id="inputNameData" onClick={() => this.txnchange()}>
+                                                                                <select className="form-control" id="inputNameData"  onClick={() => this.txnchange()}>
                                                                                     {this.state.transactionTypeData.map(item => (
                                                                                         <option value={item.id}>{item.name}</option>
                                                                                     ))}

@@ -99,7 +99,7 @@ export default class Footer extends Component {
                                 </div>
                                 <div class="col-md-4 col-sm-4 col-xs-12 resCompany">
                                     <div class="company-desc logoo">
-                                        <a href="#home-section"><img class="img-responsive" alt="" src="logo_freedom_white.png" /></a>
+                                        <a href="#home-section"><img class="img-responsive" alt="" src="https://nftstars.shop/images/Logo3_new.png" style={{height:"100px"}} /></a>
                                         <p class="light2 rl"><b>Place for healthy and prosperous community.</b></p>
                                     </div>
                                     {/* <div class="meet-us">

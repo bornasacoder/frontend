@@ -190,7 +190,7 @@ export default class Pro extends Component {
                                                                                                                         onChange={this.onChange} />
                                                                                                                    </span> <span>Monthly</span>
                                                                                                                 </label> */}
-                                                                                                                <label>
+                                                                                                                <label style={{display:"flex",alignItems:"center",gap:"10px"}}>
                                                                                                                 <span>Yearly</span>
                                                                                                                 <Toggle
                                                                                                                     id='cheese-status' icons={false}

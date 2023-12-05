@@ -192,15 +192,13 @@ export default class Home extends Component {
                                         <div className="col-md-12 col-sm-12 col-xs-12">
                                             <div className="row">
                                                 <div className="col-md-6 col-sm-6 col-xs-12 header-text sectionP60 pad_bottom_zero">
-                                                    <h1 className="rL " style={{ color: '#fff' }}>Take back control of your Internet and Prosper</h1>
-                                                    <p className="rL blue-L">A place to have open conversations and bring people together. Free your freedom and grow your cells with others creating content, driving traffic, promoting products or services, voting and referring friends. Become the vital part of the new collective Paradigm transforming OLD society!.</p>
-
-
+                                                    <h1 className="rL " style={{ color: '#fff' }}>We are many they are few – collective power of Victus.</h1>
+                                                    <p className="rL blue-L">victus a social platform uniting people and developing a strong mutual foundation to transform society by creating sustainable economics, transparent voting, and governing new rules helping in positive change.</p>
                                                 </div>
                                                 <div className="col-md-6 col-sm-6 col-xs-12 pull-right box_shadow">
                                                     <div className="login-div centered" data-aos="fade-up" data-aos-duration="1000">
                                                         <div className="head">
-                                                            <h3 className="purple oR m0">Join collective Transformation</h3>
+                                                            <h3 className="purple oR m0">Join Victus Transformation</h3>
                                                         </div>
                                                         <form onSubmit={this.submitForm}>
                                                             <div className="body">
@@ -245,7 +243,7 @@ export default class Home extends Component {
                         <section style={{ background: '#000' }}>
                             <div className="container">
                                 <div className="col-md-12 col-sm-12 col-xs-12 text-center">
-                                    <div className="m-marketing__quotation"><h3 style={{ color: '#fff' }}>“Freedomcells is more then Social Media that gives you opportunity to grow.”</h3></div>
+                                    <div className="m-marketing__quotation"><h3 style={{ color: '#fff' }}>“Victus Token is more then Social Media that gives you opportunity to grow.”</h3></div>
                                 </div>
                             </div>
                         </section>
@@ -303,7 +301,7 @@ export default class Home extends Component {
                                                     Receive tokens for your daily contributions and use them to upgrade your channel, boost your content for more reach and support other creators to grow.
                         </p>
                                                 <p className="white oR">
-                                                    Freedomcells is the unique platform uniting all people and develop strong mutual foundation to transform whole society by creating sustainable economics, transparent voting and governing new rules helping in positive change.
+                                                    Victus Token is the unique platform uniting all people and develop strong mutual foundation to transform whole society by creating sustainable economics, transparent voting and governing new rules helping in positive change.
                         </p>
                                             </div>
                                         </div>

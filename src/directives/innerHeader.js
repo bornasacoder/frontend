@@ -7,6 +7,7 @@ import toastr from 'reactjs-toastr';
 import { Notifications } from 'react-push-notification';
 import addNotification from 'react-push-notification';
 import InnerSidebar1 from './innerSidebar1';
+import { useEffect } from 'react';
 const headers = {
     'Content-Type': 'text/plain'
  };
@@ -290,7 +291,10 @@ export default class InnerHeader extends Component {
     handleOpen = ()=>{
         this.setState({open:!this.state.open})
     }
+
+    
     render() {
+        
         return (
             <div className="topbar stick stickClass">
                 <span className="logo text-right innerLogo">
@@ -301,10 +305,11 @@ export default class InnerHeader extends Component {
                 <Notifications />
 
 
-                    {this.state.open && <div className='list-group' style={{position:"fixed",right:"0px",top:"0px",padding:"20px",backgroundColor:"#fff",minHeight:"100vh",zIndex:"1999",width:"100vw"}}>
-                        {/* <div className='d-flex justify-content-end pr-2 ' > */}
-                        {/* </div> */}
-                    <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
+                    {this.state.open &&  <div  style={{position:"absolute",right:"0px",top:"0px",bottom:"0px",padding:"20px",backgroundColor:"#fff",maxHeight:"100vh",zIndex:"1999",width:"100vw",overflow:"scroll",minHeight:"100vh", }}>
+                        <div className='d-flex justify-content-end pr-2 ' >
+                        <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
+                        </div>
+                   
                         <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"10px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
                         <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vtube</button>
                         <Link to="/MyVotes">

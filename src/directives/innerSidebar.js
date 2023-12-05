@@ -139,7 +139,7 @@ export default class InnerSidebar extends Component {
     render() {
         return (
             <div className="col-lg-3 col-md-0 ">
-                <aside className="sidebar fixed ">
+                <aside className="sidebar fixed main-sidebar ">
                     <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '307px', marginLeft: '-10px' }}>
                         <br />
                         <ul className="naves">
