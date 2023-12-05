@@ -298,8 +298,8 @@ export default class InnerHeader extends Component {
         return (
             <div className="topbar stick stickClass">
                 <span className="logo text-right innerLogo">
-                    {/* <Link title="" to="/" onClick={this.loginPage}><img src="https://freedomcells.net/logo_freedom.png" alt="" /></Link> */}
-                    <Link title="" to="/" onClick={this.loginPage}><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" style={{width:"50px",height:"50px",borderRadius:"50%",textAlign:"initial"}}/></Link>
+                    <Link title="" to="/" onClick={this.loginPage}><img src="https://nftstars.shop/images/Logo3_new.png" alt=""  style={{height:"60px"}}/></Link>
+                    {/* <Link title="" to="/" onClick={this.loginPage}><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" style={{width:"50px",height:"50px",borderRadius:"50%",textAlign:"initial"}}/></Link> */}
 
                 </span>
                 <Notifications />
