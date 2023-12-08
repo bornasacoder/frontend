@@ -15,7 +15,7 @@ import {Link} from 'react-router-dom'
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-Setting'
+const TITLE = 'Victus-Token-Setting'
 const initialState = {
     user_id: '',
     old_password: '',
@@ -1304,7 +1304,7 @@ export default class Setting extends Component {
                                                                                             <div className="m-settingsV2__subheader"> Keep me updated with</div>
                                                                                             <div className="checkbox">
                                                                                                 <label>
-                                                                                                    <input type="checkbox" defaultChecked /><i className="check-box"></i>News about new Freedom-cells products and features
+                                                                                                    <input type="checkbox" defaultChecked /><i className="check-box"></i>News about new Victus-Token products and features
                                                          </label>
                                                                                             </div>
                                                                                             <div className="checkbox">
@@ -1920,7 +1920,7 @@ export default class Setting extends Component {
                                                                                     <div className="m-settingsV2__headerLabel"> Payment Methods
                                                 </div>
                                                                                 </div>
-                                                                                <div className="m-settingsV2__desc"> Manage credit cards associated with your Freedom-cells account.
+                                                                                <div className="m-settingsV2__desc"> Manage credit cards associated with your Victus-Token account.
                                              </div>
                                                                             </div>
                                                                             <div className="recurring_payments" style={{ display: 'none' }}>
@@ -1983,7 +1983,7 @@ export default class Setting extends Component {
                                                                                         Referrals
                                                 </div>
                                                                                 </div>
-                                                                                <div className="m-settingsV2__desc"> If your friend signs up for Freedom-cells within 24 hours of clicking the link you shared with them, they’ll be added to your pending referrals. Once they sign up for the rewards program by setting up their Freedom-cells wallet, the referral is complete and you’ll both get +1 added to your contribution scores!
+                                                                                <div className="m-settingsV2__desc"> If your friend signs up for Victus-Token within 24 hours of clicking the link you shared with them, they’ll be added to your pending referrals. Once they sign up for the rewards program by setting up their Victus-Token wallet, the referral is complete and you’ll both get +1 added to your contribution scores!
                                              </div>
                                                                                 <div className="pad_left_form">
                                                                                     <form >
@@ -2000,7 +2000,7 @@ export default class Setting extends Component {
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div className="m-form__row--label">
-                                                                                                <label htmlFor="footer_text" style={{ fontSize: 'small' }}>You can also get referrals by adding this code to the end of any Freedom-cells link you share</label>
+                                                                                                <label htmlFor="footer_text" style={{ fontSize: 'small' }}>You can also get referrals by adding this code to the end of any Victus-Token link you share</label>
                                                                                             </div>
                                                                                             {/* <div className="m-settingsV2__referralsLinks__copyableLink">
                                                                                                 <input readOnly="" tabIndex="-1" placeholder="https://www.minds.com/register?referrer=piyush1" className="m-settingsV2__referralsLinks__copyableLinkText m-copyableLink" />

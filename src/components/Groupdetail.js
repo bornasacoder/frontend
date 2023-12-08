@@ -17,7 +17,7 @@ import TextareaAutosize from "react-autosize-textarea"
 const headers = {
     'Content-Type': 'text/plain'
 };
-const TITLE = 'Freedom-cells-Group-detail'
+const TITLE = 'Victus-Token-Group-detail'
 const initialState = {
     message: '',
     file_type: '',

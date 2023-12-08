@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 import { confirmAlert } from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 
-const TITLE = 'Freedom-cells-Discovery-Projects'
+const TITLE = 'Victus-Token-Discovery-Projects'
 const headers = {
     'Content-Type': 'text/plain'
 };

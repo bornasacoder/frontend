@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-const TITLE = 'Freedom-cells-All-Projects'
+const TITLE = 'Victus-Token-All-Projects'
 
 export default class Allprojectshome extends Component {
 

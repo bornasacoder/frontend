@@ -11,7 +11,7 @@ import toastr from 'reactjs-toastr';
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-Plus'
+const TITLE = 'Victus-Token-Plus'
 
 export default class Plus extends Component {
 

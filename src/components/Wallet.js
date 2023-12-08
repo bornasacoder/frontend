@@ -13,7 +13,7 @@ var QRCode = require('qrcode.react');
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-Wallet'
+const TITLE = 'Victus-Token-Wallet'
 const initialState = {
     user_id: '',
     api_key: '',

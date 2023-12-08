@@ -7,7 +7,7 @@ import 'reactjs-toastr/lib/toast.css';
 import { Helmet } from 'react-helmet'
 import Cookies from 'js-cookie';
 
-const TITLE = 'Freedom-cells-Twofa'
+const TITLE = 'Victus-Token-Twofa'
 const headers = {
     'Content-Type': 'text/plain'
  };

@@ -8,7 +8,7 @@ import 'reactjs-toastr/lib/toast.css';
 import { Helmet } from 'react-helmet'
 import Cookies from 'js-cookie';
 
-const TITLE = 'Freedom-cells-Profilesetup'
+const TITLE = 'Victus-Token-Profilesetup'
 
 export default class Profilesetup extends Component {
     custom_file_upload_url = `${process.env.REACT_APP_URL}/api/users/add_user_interest`;

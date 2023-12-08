@@ -13,7 +13,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-My-Groups'
+const TITLE = 'Victus-Token-My-Groups'
 
 export default class MyGroups extends Component {
 

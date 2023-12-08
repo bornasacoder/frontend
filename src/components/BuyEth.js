@@ -7,7 +7,7 @@ import Fixedsidebarright from '../directives/Fixedsidebarright'
 import Messaging from '../components/messaging'
 
 
-const TITLE = 'Freedom-cells-BuyETH'
+const TITLE = 'Victus-Token-BuyETH'
 
 export default class BuyEther extends Component {
 

@@ -20,7 +20,7 @@ import TextareaAutosize from "react-autosize-textarea"
 const headers = {
     'Content-Type': 'text/plain'
 };
-const TITLE = 'Freedom-cells-Timeline'
+const TITLE = 'Victus-Token-Timeline'
 const initialState = {
     message: '',
     file_type: '',

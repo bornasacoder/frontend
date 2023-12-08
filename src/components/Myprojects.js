@@ -13,7 +13,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-My-Projects'
+const TITLE = 'Victus-Token-My-Projects'
 
 export default class MyProjects extends Component {
 

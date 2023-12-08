@@ -7,7 +7,7 @@ import Messaging from '../components/messaging'
 import axios from 'axios';
 import Cookies from 'js-cookie';
 
-const TITLE = 'Freedom-cells-All-Notifications'
+const TITLE = 'Victus-Token-All-Notifications'
 const headers = {
     'Content-Type': 'text/plain'
 };

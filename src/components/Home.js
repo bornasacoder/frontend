@@ -11,7 +11,7 @@ import GliderSlider from './GliderSlider';
 const headers = {
     'Content-Type': 'text/plain'
 };
-const TITLE = 'Freedom-cells-Login'
+const TITLE = 'Victus-Token-Login'
 const initialState = {
     email: '',
     password: '',

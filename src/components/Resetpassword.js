@@ -8,7 +8,7 @@ import { Helmet } from 'react-helmet'
 const headers = {
     'Content-Type': 'text/plain'
  };
-const TITLE = 'Freedom-cells-Resetpassword'
+const TITLE = 'Victus-Token-Resetpassword'
 const initialState = {
     code: '',
     new_password: '',

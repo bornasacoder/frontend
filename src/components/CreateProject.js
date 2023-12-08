@@ -11,7 +11,7 @@ import Messaging from '../components/messaging'
 const headers = {
     'Content-Type': 'text/plain'
 };
-const TITLE = 'Freedom-cells-Createproject'
+const TITLE = 'Victus-Token-Createproject'
 const initialState = {
     group_name: '',
     description: '',

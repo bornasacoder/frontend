@@ -9,7 +9,7 @@ import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
 import $ from 'jquery'
 
-const TITLE = 'Freedom-cells-Login'
+const TITLE = 'Victus-Token-Login'
 const initialState = {
     email: '',
     password: '',

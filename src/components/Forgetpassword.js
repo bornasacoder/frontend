@@ -5,7 +5,7 @@ import axios from 'axios';
 import toastr from 'reactjs-toastr';
 import 'reactjs-toastr/lib/toast.css';
 import { Helmet } from 'react-helmet'
-const TITLE = 'Freedom-cells-Forgetpassword'
+const TITLE = 'Victus-Token-Forgetpassword'
 
 const initialState = {
     email: '',

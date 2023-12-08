@@ -8,7 +8,7 @@ import InnerSidebar from '../directives/innerSidebar';
 import Fixedsidebarright from '../directives/Fixedsidebarright'
 import Messaging from '../components/messaging'
 
-const TITLE = 'Freedom-cells-overview'
+const TITLE = 'Victus-Token-overview'
 
 export default class Overview extends Component {
 

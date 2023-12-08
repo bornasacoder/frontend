@@ -7,7 +7,7 @@ import Fixedsidebarright from '../directives/Fixedsidebarright'
 import Messaging from '../components/messaging'
 
 
-const TITLE = 'Freedom-cells-Analytics-traffic'
+const TITLE = 'Victus-Token-Analytics-traffic'
 
 export default class AnalyticsTraffic extends Component {
 

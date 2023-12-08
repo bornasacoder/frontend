@@ -13,7 +13,7 @@ const headers = {
     'Content-Type': 'text/plain'
  };
 
-const TITLE = 'Freedom-cells-Add-vote'
+const TITLE = 'Victus-Token-Add-vote'
 const initialState = {
     title: '',
     options: '',
