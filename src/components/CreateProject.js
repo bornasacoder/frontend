@@ -143,6 +143,7 @@ export default class Createproject extends Component {
         )
 
             .then(res => {
+                console.log(res);
                 if (res.data.code === true) {
 
                     this.group_id = res.data.recdata.id

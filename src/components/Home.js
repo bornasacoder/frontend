@@ -362,7 +362,7 @@ export default class Home extends Component {
 
                         {/* </> */}
 
-                        {/* </Particles> */}
+                       
                     </>
                     <Footer />
 
