@@ -138,15 +138,15 @@ export default class InnerSidebar extends Component {
 
     render() {
         return (
-            <div className="col-lg-3 col-md-0 ">
-                <aside className="sidebar fixed main-sidebar ">
+            <div className="col-lg-3 col-md-0  ">
+                <aside className="sidebar fixed main-sidebar" style={{top:"115px"}}>
                     <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '307px', marginLeft: '-10px' }}>
                         <br />
                         <ul className="naves">
                             <li id="li_self">
-                                <img src={this.state.bannerImage?.avatar}/>
+                                <img style={{width:"35px", height:"35px"}} src={this.state.bannerImage?.avatar}/>
                                 {/* <i className="ti-user"></i> */}
-                                <Link to={`/timeLine/${this.loginData?.id}`} style={{top: '12px',marginLeft: '7px'}} onClick={this.loading.bind(this, this.loginData?.id)}>{this.state.list?.display_name} </Link>
+                                <Link to={`/timeLine/${this.loginData?.id}`} style={{marginLeft: '7px', top:"0px"}} onClick={this.loading.bind(this, this.loginData?.id)}>{this.state.list?.display_name} </Link>
                             </li>
                             <li id="li_dashboard">
                                 <i className="fa fa-home" aria-hidden="true"></i>
@@ -157,7 +157,7 @@ export default class InnerSidebar extends Component {
                                 <Link to="/wallet" title="" > Wallet </Link>
                             </li>
                             <li className="sidebar-dropdown">
-                                <a href="javascript:;" className="group_arrow" style={{ marginLeft: '23px' }}> <img style={{ color: '#999', marginLeft: '-28px' }} src="https://freedomcells.net/Projects_icon_small.png" /><span>Projects</span></a>
+                                <a href="javascript:;" className="group_arrow" style={{ marginLeft: '23px' }}> <img style={{ color: '#999', marginLeft: '-28px' }} src="https://victus.club/Projects_icon_small.png" /><span>Projects</span></a>
                                 <div className="sidebar-submenu" style={{ display: 'none' }}>
                                     <ul>
                                         <li id="li_projects">

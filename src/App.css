@@ -191,6 +191,7 @@ i.fa.fa-bars.font_login{
 
 .sidebar .widget .active > a {
   color: #1547fc !important;
+  top: 0px !important;
 }
 .sidebar .widget .active > i {
   color: #1547fc !important;
@@ -1116,17 +1117,17 @@ li.post-comment {
   text-align: center;
 }
 .m-messenger--userlist {
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.15), 0 1px 0 -2px rgba(0,0,0,.15), 0 1px 5px 0 rgba(0,0,0,.15);
+  
 }
 .m-messenger--userlist {
-  width: 200px;
+  /* width: 200px; */
   border-radius: 3px 3px 0 0;
 }
 .m-messenger--dockpane {
   margin: 0 8px;
-  width: 228px;    
+  width: 300px; 
   position: fixed;
-  right: 10px;
+  right: -220px;
   bottom: 5px;
   z-index: 9999;
 }
@@ -1134,24 +1135,34 @@ li.post-comment {
 .m-messenger--dockpane .m-messenger--dockpane-tab {
   font-family: Roboto,Helvetica,sans-serif;
   border-radius: 3px 3px 0 0;
-  height: 28px;
-  width: 100%;
-   background-color: #fff;
+  height: 70px;
+  width: 70px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.15), 0 1px 0 -2px rgba(0,0,0,.15), 0 1px 5px 0 rgba(0,0,0,.15); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+   background-color: white;
   color: #4f4f50;
-  display: block;
+  /* display: block; */
   cursor: pointer;
 }
 .m-messenger--dockpane .m-messenger--dockpane-tab .m-messenger--dockpane-tab-title {
-  padding: 2px 12px;
+  /* padding: 2px 12px; */
   display: inline-block;
   text-overflow: ellipsis;
   max-width: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 .m-messenger--dockpane .m-messenger--dockpane-tab .m-messenger--dockpane-tab-title>i {
   vertical-align: middle;
-  font-size: 17px;
-  padding: 0 8px 0 0;
+  font-size: 30px;
+
+  color: #333;
+  /* padding: 0 8px 0 0; */
 }
 
 .material-icons {
@@ -1183,11 +1194,12 @@ li.post-comment {
   text-align: right;
   vertical-align: middle;
   float: right;
-  padding-right: 8px;
+  /* padding-right: 8px; */
 }
 .m-messenger--dockpane .m-messenger--dockpane-tab .m-messenger--dockpane-tab-actions>i {
-  font-size: 14px;
-  padding: 8px 2px;
+  font-size: 24px;
+  color: white;
+  /* padding: 8px 2px; */
   line-height: 12px;
   border-radius: 0 3px 0 0;
 }
@@ -3491,8 +3503,14 @@ body {
   top: 0;
   opacity: 0;
 }
+#li_self{
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+}
 #li_self img {
-  width: 20%;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
 }
 #people-list {

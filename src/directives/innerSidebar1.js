@@ -143,9 +143,9 @@ export default class InnerSidebar1 extends Component {
                         <br />
                         <ul className="naves">
                             <li id="li_self">
-                                <img src={this.state.bannerImage?.avatar}/>
+                                <img style={{width:"35px", height:"35px"}} src={this.state.bannerImage?.avatar}/>
                                 {/* <i className="ti-user"></i> */}
-                                <Link to={`/timeLine/${this.loginData?.id}`} style={{top: '12px',marginLeft: '7px'}} onClick={this.loading.bind(this, this.loginData?.id)}>{this.state.list?.display_name} </Link>
+                                <Link to={`/timeLine/${this.loginData?.id}`} style={{marginLeft: '7px', top:"0px"}} onClick={this.loading.bind(this, this.loginData?.id)}>{this.state.list?.display_name} </Link>
                             </li>
                             <li id="li_dashboard">
                                 <i className="fa fa-home" aria-hidden="true"></i>

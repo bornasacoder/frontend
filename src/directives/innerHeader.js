@@ -310,8 +310,8 @@ export default class InnerHeader extends Component {
                         <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
                         </div>
                    
-                        <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"10px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vtube</button>
+                        <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"20px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
+                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', }} onClick={this.handleOpen}>Vtube</button>
                         <Link to="/MyVotes">
                         <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vote</button>
                         </Link>
@@ -331,16 +331,16 @@ export default class InnerHeader extends Component {
                     </div>}
 
                     <span className="crowd_fund" >
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Vtube</button>
+                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Vtube</button>
                         <Link to="/MyVotes">
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Vote</button>
+                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Vote</button>
                         </Link>
                         <Link to="/allprojects">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>CrowdFund</button>
+                            <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>CrowdFund</button>
                         </Link>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Market</button>
+                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Market</button>
                         <Link to="/discoverygroups">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}}>Groups</button>
+                            <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Groups</button>
                         </Link>
                         {/* <Link to="/BuyEth">
 

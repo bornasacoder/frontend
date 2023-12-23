@@ -224,7 +224,7 @@ export default class Timeline extends Component {
 
         }, 5000);
 
-
+        // console.log(state)
         $('body').delegate('.m-emoji-selector-list span', 'click', function () {
             var val = $('#post_text').val() + $(this).text();
             $('#post_text').val(val);
@@ -323,7 +323,7 @@ export default class Timeline extends Component {
     }
 
     //==================================  Detail of Following List  ==============================
-
+    
     removeImage(e) {
 
         this.setState({
@@ -1471,7 +1471,9 @@ export default class Timeline extends Component {
             //alert("There is an error in API call.");
         });
 
+        
     }
+
 
     render() {
         const crowdDetail1 = this.state.crowdDetail
@@ -1658,9 +1660,20 @@ export default class Timeline extends Component {
                     </div>
                     {/* <!-- left sidebar menu --> */}
                     <section>
-                        <div className="feature-photo container ">
+                        <div className="feature-photo container mt-5 rounded-1">
+
                             <figure className="hover_effect_cover">
-                                {this.state.image_preview3 ? <img style={{ marginTop: '58px', width: '100%', height: '330px', objectFit: 'cover' }} src={this.state.image_preview3} alt="No Data" /> : <img style={{ marginTop: '58px', width: '100%', height: '330px', objectFit: 'cover' }} src={this.state.bannerImage?.background_image} alt="" />}
+                           
+                                {this?.state?.image_preview3 ?
+                                 <img style={{ marginTop: '58px', width: '100%', height: '330px', objectFit: 'cover', borderRadius:"30px" }} src={this.state.image_preview3} alt="No Data" /> 
+                                :
+                                <>
+                               {this?.state?.bannerImage?.background_image ?
+                                  <img style={{ marginTop: '58px', width: '100%', height: '330px', objectFit: 'cover' }} src={this?.state?.bannerImage?.background_image} alt="" /> 
+                                  :
+                                  <img style={{ marginTop: '58px', width: '100%', height: '330px', objectFit: 'cover' }} src={"https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg"} alt="" /> 
+                                  }
+                                  </>}
                             </figure>
                             <div className="add-btn">
                                 {/* <span>{this.state.listFollower.length} followers</span> */}
@@ -1693,8 +1706,8 @@ export default class Timeline extends Component {
                                                         this.state.bannerImage?.is_friend === 1 ?
                                                             <>
                                                                 {/* <a className="active" href="javascript:;" title="" data-ripple="" id="timeline-menu" onClick={this.change_section.bind(this, 'timeline')}>Time line</a> */}
-                                                                <a className="" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a>
-                                                                <a className="" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a>
+                                                                <a className="text-md" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a>
+                                                                <a className="fs-6" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a>
                                                                 {/* <a className="" href="javascript:;" title="" data-ripple="" id="groups-menu" onClick={this.change_section.bind(this, 'groups')}>Groups</a> */}
                                                                 {/* <a className="" href="javascript:;" title="" data-ripple="" id="about-menu" onClick={this.change_section.bind(this, 'about')}>About</a> */}
                                                             </>

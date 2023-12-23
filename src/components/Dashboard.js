@@ -1575,7 +1575,7 @@ export default class Dashboard extends Component {
                     </div>
                     {/* <!-- left sidebar menu --> */}
 
-                    <section>
+                    <section className='mt-3' >
                         <div className="gap gray-bg">
                             <div className="container">
                                 <div className="row">

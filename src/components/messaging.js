@@ -533,7 +533,8 @@ export default class Messaging extends Component {
 
             <div className="m-messenger--userlist m-messenger--dockpane">
                <div className="m-messenger--dockpane-tab" id="message-head">
-                  <div className="m-messenger--dockpane-tab-title"><i className="material-icons fa fa-comment"></i><span>Messenger</span></div>
+                  <div className="m-messenger--dockpane-tab-title"><i className="material-icons fa fa-comment"></i></div>
+                  
                   <div className="m-messenger--dockpane-tab-actions">
                      {/* <i className="material-icons fa fa-cog">  </i> */}
                   </div>
