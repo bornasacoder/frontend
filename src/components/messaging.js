@@ -136,9 +136,9 @@ export default class Messaging extends Component {
 
    manage_style(i) {
       if (i === 0) {
-         return 245;
+         return 300;
       } else {
-         return (245 * i) + 240;
+         return (260 * i) + 300;
       }
    }
    minimize_chat(item) {
@@ -329,7 +329,7 @@ export default class Messaging extends Component {
       if (i == 0) {
          return 320;
       } else {
-         return (240 * i) + 320;
+         return (320 * i) + 320;
       }
    }
 
@@ -439,11 +439,16 @@ export default class Messaging extends Component {
                     
                     
                      <div className="m-messenger--conversation m-messenger--dockpane m-messenger--dockpane-open" style={{ right: `${this.manage_style(i)}px`, bottom: "5px" }} >
-                        <div className="m-messenger--dockpane-tab chat-head coment_box">
+                        <div className="coment_box">
                            <div className="m-messenger--dockpane-tab-title" onClick={this.minimize_chat.bind(this, item)}>
+                               <img tabIndex="0" src={this.state.bannerImage?.avatar} className="avatar-setting" />
                               <span className="">{item.full_name}</span>
                            </div>
-                           <div className="m-messenger--dockpane-tab-actions"><i className="material-icons mdl-color-text--blue-grey-100" hidden=""></i><i data-cy="data-minds-conversation-options" className="material-icons fa fa-ellipsis-v" onClick={this.option_chat.bind(this, item)}></i>&nbsp;<i data-cy="data-minds-conversation-close" onClick={this.close_chat.bind(this, item)} className="material-icons fa fa-close"></i></div>
+                           <div className="m-messenger--dockpane-tab-actions"><i className="material-icons mdl-color-text--blue-grey-100" hidden=""></i><i data-cy="data-minds-conversation-options" className="material-icons fa fa-ellipsis-v" 
+                           style={{color:"white"}}
+                           onClick={this.option_chat.bind(this, item)}></i>&nbsp;<i data-cy="data-minds-conversation-close" onClick={this.close_chat.bind(this, item)}
+                           style={{color:"white"}}
+                           className="material-icons fa fa-close"></i></div>
                         </div>
                         <div className="m-messenger--dockpane-container" id={"chat_box" + item.id} style={{ display: item.open_chat_box == 0 ? 'none' : '' }}>
 
@@ -479,9 +484,9 @@ export default class Messaging extends Component {
                                           <div className="m-messenger--conversation-messages-message ng-star-inserted">
                                              <div className="m-messenger--conversation-message-bubble mdl-color--blue-grey-50 mdl-color-text--blue-grey-700 ng-star-inserted" dangerouslySetInnerHTML={{ __html: msg.message }}></div>
                                              <Link to={`/timeLine/${msg.sender_id}`} onClick={this.loading.bind(this, msg.sender_id)}>
-                                                <img tabIndex="0" src={this.state.bannerImage?.avatar} className="ng-star-inserted" />
+                                                <img tabIndex="0" style={{width:"20px", height:"20px", objectFit:"cover",borderRadius:"50%" }} src={this.state.bannerImage?.avatar} className="ng-star-inserted" />
                                              </Link>
-                                             <div className="m-messenger--conversations-ts mdl-color-text--blue-grey-100" hidden=""> {msg.date} </div>
+                                             <div className="m-messenger--conversations-ts mdl-color-text--blue-grey-100" hidden="" style={{fontSize:"10px", margin:"10px 0px", fontWeight:"500"}} > {msg.date} </div>
                                           </div>
                                        </>
                                        :
@@ -504,10 +509,14 @@ export default class Messaging extends Component {
 
                            {(item.blocked_chat_by == 0) ?
                               <>
-                                 <div class="m-messenger--conversation-composer ng-star-inserted main_msg_area" style={{background:'#f0f0f0'}}>
+                                 <div class="m-messenger--conversation-composer ng-star-inserted main_msg_area" style={{background:'#f0f0f0', height:"45px", display:"flex", justifyContent:"center", alignItems:"center"}}>
                                     <textarea name="message" maxlength="180" rows="1" id={"msg_textarea" + item.id} placeholder="Send a message..." onKeyUp={(e) => this.something(e,item) } class="ng-untouched ng-pristine ng-valid" style={{ height: " 36px" }} onClick={this.hide_emoji_box.bind(this, item)}></textarea>
-                                    <i class="material-icons mdl-color-text--blue-grey-600 fa fa-smile-o" onClick={this.show_emoji_box.bind(this, item)} ></i>
-                                    <i data-cy="data-minds-conversation-send" onClick={this.send_massage.bind(this, item)} class="material-icons mdl-color-text--blue-grey-600 fa fa-send"></i>
+                                    <i class="material-icons mdl-color-text--blue-grey-600 fa fa-smile-o"
+                                    style={{color:"#0866FF"}}
+                                    onClick={this.show_emoji_box.bind(this, item)} ></i>
+                                    <i data-cy="data-minds-conversation-send" onClick={this.send_massage.bind(this, item)} 
+                                    style={{color:"#0866FF"}}
+                                    class="material-icons mdl-color-text--blue-grey-600 fa fa-send"></i>
                                     <div class="m-bubble-popup mdl-shadow--4dp ng-star-inserted" id={"emoji_box" + item.id} style={{ top: "auto", right: `${this.manage_emoji_style(i)}px`, bottom: "36px", left: "auto", display: "none" }}><div class="m-emoji-selector-title">Emoji<i class="fa fa-close" onClick={this.show_emoji_box.bind(this, item)} style={{color:'#333', float:'right'}}></i></div><div class="m-emoji-selector-list"><span tabindex="0" class="m-emoji ng-star-inserted" title="ELECTRIC LIGHT BULB">💡</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH TEARS OF JOY">😂</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLACK HEART SUIT">♥</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HEAVY BLACK HEART">❤</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH HEART-SHAPED EYES">😍</span><span tabindex="0" class="m-emoji ng-star-inserted" title="UNAMUSED FACE">😒</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH SMILING EYES">😊</span><span tabindex="0" class="m-emoji ng-star-inserted" title="LOUDLY CRYING FACE">😭</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE THROWING A KISS">😘</span><span tabindex="0" class="m-emoji ng-star-inserted" title="TWO HEARTS">💕</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WHITE SMILING FACE">☺</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WEARY FACE">😩</span><span tabindex="0" class="m-emoji ng-star-inserted" title="OK HAND SIGN">👌</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PENSIVE FACE">😔</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMIRKING FACE">😏</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GRINNING FACE WITH SMILING EYES">😁</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WINKING FACE">😉</span><span tabindex="0" class="m-emoji ng-star-inserted" title="THUMBS UP SIGN">👍</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PERSON WITH FOLDED HANDS">🙏</span><span tabindex="0" class="m-emoji ng-star-inserted" title="RELIEVED FACE">😌</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLACK UNIVERSAL RECYCLING SYMBOL">♻</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FLUSHED FACE">😳</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PERSON RAISING BOTH HANDS IN CELEBRATION">🙌</span><span tabindex="0" class="m-emoji ng-star-inserted" title="MULTIPLE MUSICAL NOTES">🎶</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SEE-NO-EVIL MONKEY">🙈</span><span tabindex="0" class="m-emoji ng-star-inserted" title="VICTORY HAND">✌</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH SUNGLASSES">😎</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CRYING FACE">😢</span><span tabindex="0" class="m-emoji ng-star-inserted" title="EYES">👀</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH OPEN MOUTH AND COLD SWEAT">😅</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SPARKLES">✨</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SLEEPING FACE">😴</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH OPEN MOUTH AND SMILING EYES">😄</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PURPLE HEART">💜</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HUNDRED POINTS SYMBOL">💯</span><span tabindex="0" class="m-emoji ng-star-inserted" title="EXPRESSIONLESS FACE">😑</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SPARKLING HEART">💖</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BROKEN HEART">💔</span><span tabindex="0" class="m-emoji ng-star-inserted" title="INFORMATION DESK PERSON">💁</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLUE HEART">💙</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CONFUSED FACE">😕</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH STUCK-OUT TONGUE AND WINKING EYE">😜</span><span tabindex="0" class="m-emoji ng-star-inserted" title="DISAPPOINTED FACE">😞</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE SAVOURING DELICIOUS FOOD">😋</span><span tabindex="0" class="m-emoji ng-star-inserted" title="NEUTRAL FACE">😐</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CLAPPING HANDS SIGN">👏</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SLEEPY FACE">😪</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HEART WITH ARROW">💘</span><span tabindex="0" class="m-emoji ng-star-inserted" title="REVOLVING HEARTS">💞</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GROWING HEART">💗</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SPEAK-NO-EVIL MONKEY">🙊</span><span tabindex="0" class="m-emoji ng-star-inserted" title="RAISED HAND">✋</span><span tabindex="0" class="m-emoji ng-star-inserted" title="KISS MARK">💋</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WHITE RIGHT POINTING BACKHAND INDEX">👉</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CHERRY BLOSSOM">🌸</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE SCREAMING IN FEAR">😱</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH HORNS">😈</span><span tabindex="0" class="m-emoji ng-star-inserted" title="LEFTWARDS BLACK ARROW">⬅</span><span tabindex="0" class="m-emoji ng-star-inserted" title="POUTING FACE">😡</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FIRE">🔥</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH OPEN MOUTH">😃</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FISTED HAND SIGN">👊</span><span tabindex="0" class="m-emoji ng-star-inserted" title="TIRED FACE">😫</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PARTY POPPER">🎉</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH STUCK-OUT TONGUE AND TIGHTLY-CLOSED EYES">😝</span><span tabindex="0" class="m-emoji ng-star-inserted" title="ROSE">🌹</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLACK SUN WITH RAYS">☀</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FLEXED BICEPS">💪</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH LOOK OF TRIUMPH">😤</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SKULL">💀</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH COLD SWEAT">😓</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WHITE LEFT POINTING BACKHAND INDEX">👈</span><span tabindex="0" class="m-emoji ng-star-inserted" title="YELLOW HEART">💛</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH OPEN MOUTH AND TIGHTLY-CLOSED EYES">😆</span><span tabindex="0" class="m-emoji ng-star-inserted" title="NEW MOON WITH FACE">🌚</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HEAVY CHECK MARK">✔</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CAMERA">📷</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING CAT FACE WITH HEART-SHAPED EYES">😻</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WAVING HAND SIGN">👋</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH MEDICAL MASK">😷</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PERSEVERING FACE">😣</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GREEN HEART">💚</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GRINNING FACE">😀</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BEATING HEART">💓</span><span tabindex="0" class="m-emoji ng-star-inserted" title="KISSING FACE WITH CLOSED EYES">😚</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CROWN">👑</span><span tabindex="0" class="m-emoji ng-star-inserted" title="DISAPPOINTED BUT RELIEVED FACE">😥</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLACK RIGHT-POINTING TRIANGLE">▶</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH STUCK-OUT TONGUE">😛</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HEADPHONE">🎧</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CONFOUNDED FACE">😖</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WHITE HEAVY CHECK MARK">✅</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SMILING FACE WITH HALO">😇</span><span tabindex="0" class="m-emoji ng-star-inserted" title="ANGRY FACE">😠</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PISTOL">🔫</span><span tabindex="0" class="m-emoji ng-star-inserted" title="HAPPY PERSON RAISING ONE HAND">🙋</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GLOWING STAR">🌟</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GRIMACING FACE">😬</span><span tabindex="0" class="m-emoji ng-star-inserted" title="THUMBS DOWN SIGN">👎</span><span tabindex="0" class="m-emoji ng-star-inserted" title="BLACK RIGHTWARDS ARROW">➡</span><span tabindex="0" class="m-emoji ng-star-inserted" title="DANCER">💃</span><span tabindex="0" class="m-emoji ng-star-inserted" title="MUSICAL NOTE">🎵</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITHOUT MOUTH">😶</span><span tabindex="0" class="m-emoji ng-star-inserted" title="RAISED FIST">✊</span><span tabindex="0" class="m-emoji ng-star-inserted" title="DIZZY SYMBOL">💫</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH NO GOOD GESTURE">🙅</span><span tabindex="0" class="m-emoji ng-star-inserted" title="COLLISION SYMBOL">💥</span><span tabindex="0" class="m-emoji ng-star-inserted" title="WHITE DOWN POINTING BACKHAND INDEX">👇</span><span tabindex="0" class="m-emoji ng-star-inserted" title="LARGE RED CIRCLE">🔴</span><span tabindex="0" class="m-emoji ng-star-inserted" title="COPYRIGHT SIGN">©</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PILE OF POO">💩</span><span tabindex="0" class="m-emoji ng-star-inserted" title="THOUGHT BALLOON">💭</span><span tabindex="0" class="m-emoji ng-star-inserted" title="GEM STONE">💎</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SLICE OF PIZZA">🍕</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH OK GESTURE">🙆</span><span tabindex="0" class="m-emoji ng-star-inserted" title="FACE WITH OPEN MOUTH AND COLD SWEAT">😰</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PENGUIN">🐧</span><span tabindex="0" class="m-emoji ng-star-inserted" title="TONGUE">👅</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SUN WITH FACE">🌞</span><span tabindex="0" class="m-emoji ng-star-inserted" title="PEDESTRIAN">🚶</span><span tabindex="0" class="m-emoji ng-star-inserted" title="CAT FACE WITH TEARS OF JOY">😹</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SPLASHING SWEAT SYMBOL">💦</span><span tabindex="0" class="m-emoji ng-star-inserted" title="SLEEPING SYMBOL">💤</span><span tabindex="0" class="m-emoji ng-star-inserted" title="LEAF FLUTTERING IN WIND">🍃</span><span tabindex="0" class="m-emoji ng-star-inserted" title="AIRPLANE">✈</span></div></div>
                                  </div>
                               </>
@@ -536,23 +545,28 @@ export default class Messaging extends Component {
                   <div className="m-messenger--dockpane-tab-title"><i className="material-icons fa fa-comment"></i></div>
                   
                   <div className="m-messenger--dockpane-tab-actions">
-                     {/* <i className="material-icons fa fa-cog">  </i> */}
+               
                   </div>
                </div>
                <div className="m-messenger--dockpane-container" id="message_user_list" style={{ display: "none" }}>
-                  {/* <div className="m-messenger--dockpane-tab-ribbon mdl-color-text--blue-grey-300" hidden="">
-         <div className="m-messenger--dockpane-tab-icon" hidden="">
-            <i className="material-icons mdl-color-text--blue-grey-100" title="Logout of chat">exit_to_app</i>Logout
-         </div>
+                  <div className="m-messenger--dockpane-tab-ribbon mdl-color-text--blue-grey-300" hidden="">
+           <h6 className='text-black' >Chats</h6>
+         {/* <div className="m-messenger--dockpane-tab-icon d-flex align-items-center h-100 " hidden=""> */}
+         {/* </div> */}
          <div className="m-messenger--dockpane-tab-icon mdl-color-text--blue-grey-300">
-            <i className="material-icons mdl-color-text--blue-grey-100" title="Change your encryption password">vpn_key</i>Re-key
          </div>
-      </div> */}
+      
+      </div>
 
                   <div minds-messenger-scroll="" className="m-messenger--userlist-conversations">
+                  <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2"><i className="material-icons fa fa-search icons-set"></i><input type="text" placeholder="Search Messenger..." id="user_search" onChange={this.user_search1.bind(this, 1)} /></div>
                      {(this.state.users_list.length > 0) ?
                         this.state.users_list.map(item => (
-                           <div className="m-messenger--userlist-conversations-item " onClick={this.select_user.bind(this, item)}><img className="mdl-shadow--2dp" src={item.avatar} /><span className="m-conversation-label">{item.full_name}</span><span className="m-conversation-icons"><span className="m-conversation-new mdl-color--green" hidden=""></span><span className="m-conversation-online mdl-color--blue"></span></span></div>
+                           <div className="m-messenger--userlist-conversations-item " onClick={this.select_user.bind(this, item)}><img className="mdl-shadow--2dp" src={item.avatar} />
+                           <span className="m-conversation-label">{item.full_name}</span>
+                           <span className="m-conversation-icons"><span className="m-conversation-new mdl-color--green" hidden=""></span>
+                           <span className="m-conversation-online mdl-color--blue"></span></span>
+                           </div>
                         )) :
                         <p className="center">Search user</p>
                      }
@@ -607,7 +621,7 @@ export default class Messaging extends Component {
                         </div>
                      </div>
                   </div>
-                  <div className="m-messenger--userlist-search"><i className="material-icons fa fa-search"></i><input type="text" placeholder="Search" id="user_search" onChange={this.user_search1.bind(this, 1)} /></div>
+               
                </div>
 
             </div>

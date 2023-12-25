@@ -41,10 +41,6 @@ export default class Groupdetail extends Component {
     custom_file_upload_url2Message = `${process.env.REACT_APP_URL}/api/users/group_chat_reply`;
 
 
-
-
-
-
     constructor(props) {
         super(props);
         this.state = initialState

@@ -23,10 +23,10 @@
     font-family: open-regular;
     src: url("../fonts/openSans/OpenSans-Regular.ttf");
 }
-@font-face {
-    font-family: open-semibold;
+/* @font-face { */
+    /* font-family: open-semibold; */
     /* src: url("../fonts/openSans/OpenSans-Semibold.ttf"); */
-}
+/* } */
 @font-face {
     font-family: open-bold;
     src: url("../fonts/openSans/OpenSans-Bold.ttf");
@@ -185,14 +185,14 @@ a.g:hover{
 }
 .gold-gradient-color{
     background:linear-gradient(to right, #fff, #fff);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s;
 }
 .blue-gradient-color{
     background: #fff;
     /*background:linear-gradient(to right, rgb(30,101,178) ,rgb(8,27,73));*/
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s;
 }
@@ -315,13 +315,13 @@ a.g:hover{
 }
 .btn-gradient.outline-button div span{
     background:linear-gradient(to right, #fff, #FF6C0D);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s;
 }
 .btn-gradient.outline-button:hover div span{
     background:linear-gradient(to right, #fff, #FF6C0D);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: white;
     transition: all 0.5s;
 }
@@ -700,7 +700,7 @@ textarea:focus{
     font-size: 32px;
     margin-right: 15px;
     background:linear-gradient(to right, #fff, #FF6C0D);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.3s;
 
@@ -771,7 +771,7 @@ textarea:focus{
 }
 .services-div .service-icon i{
     background:linear-gradient(to right, #fff, #FF6C0D);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 .services-div .service-hover{
@@ -922,13 +922,13 @@ textarea:focus{
 .team-member .member-desc .social-icons a i{
     font-size: 18px;
     background:linear-gradient(to right, #fff, #fff);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255,255,255,.075);
     transition: all 0.3s;
 }
 .team-member .member-desc .social-icons a:hover i{
     background:linear-gradient(to right, #fff, #FF6C0D);
-    -webkit-background-clip: text;
+    --webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: all 0.35s;
 }

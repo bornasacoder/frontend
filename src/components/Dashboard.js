@@ -1593,7 +1593,7 @@ export default class Dashboard extends Component {
                                                         <div className="newpst-input">
                                                             <form onSubmit={(this.state.detailPost != '') ? this.handleSubmitFile : this.handleSubmitFile}>
                                                                 <TextareaAutosize rows="2" id="post_text" style={{ fontSize: '17px' }} value={this.state.message}
-                                                                    onChange={this.onChange} name="message" placeholder="Write something"></TextareaAutosize>
+                                                                    onChange={this.onChange} name="message" placeholder="Write something..."></TextareaAutosize>
                                                                 <input type="text" style={{ display: 'none' }} readOnly value={this.state.tag_hold_input} onChange={this.onChange} name="tag_hold_input" id="tag_hold_input" />
                                                                 <input type="text" style={{ display: 'none' }} readOnly value={this.state.nsfw_hold_input} onChange={this.onChange} name="nsfw_hold_input" id="nsfw_hold_input" />
 
@@ -1805,14 +1805,13 @@ export default class Dashboard extends Component {
 
 
                                                                             <div className="we-video-info">
-                                                                                <ul>
+                                                                                <ul className='' >
                                                                                     {/* <li>
                                                 <span className="views" data-toggle="tooltip" title="views">
                                                     <i className="fa fa-eye"></i>
                                                     <ins>1.2k</ins>
                                                 </span>
-                                            </li> */}
-
+                                                                                    </li> */}
                                                                                     <li onClick={this.submitLike.bind(this, item)}>
                                                                                         <span className="like" data-toggle="tooltip">
                                                                                             {item.user_like === '0' ? <i className="fa fa-thumbs-o-up" aria-hidden="true"></i> : <i className="fa fa-thumbs-up" aria-hidden="true"></i>}
@@ -1979,7 +1978,7 @@ export default class Dashboard extends Component {
                                                                                                 <div className="post-comt-box" style={{ width: '77%' }}>
                                                                                                     <form className="main_msg_area1">
                                                                                                         <TextareaAutosize id={"message2" + item1.post_comment_id} placeholder="Post your comment"/>
-                                                                                                        <div className="add-smiles" style={{ top: '10%' }}>
+                                                                                                        <div className="add-smiles" style={{ top: '45%' }}>
                                                                                                             {/* <span className="em em-expressionless" title="add icon"> */}
                                                                                                             <i className="fa fa-picture-o post_commentcss" aria-hidden="true"></i> &nbsp;
                                         <label className="fileContainer image_uploadcontainer"><input type="file" accept=".jpg,.jpeg,.png,.mp4" id={"imgg" + item1.post_comment_id} onChange={this.handleImagePreview2.bind(this, item1.post_comment_id)} /></label>
@@ -2111,7 +2110,7 @@ export default class Dashboard extends Component {
                                                                                 <div className="m-layout__spacer"></div>
                                                                             </Link>
                                                                             <div className="" style={{ textAlign: 'end' }}>
-                                                                                <a onClick={this.deleteChannnels.bind(this, item)}>
+                                                                                <a onClick={this.deleteChannnels.bind(this, item)} style={{marginRight:"8px"}} >
                                                                                     <i className="fa fa-close m-suggestionsSidebarListItem__passBtn" style={{ cursor: 'pointer' }} ></i>
                                                                                 </a>
                                                                                 <minds-button-subscribe >

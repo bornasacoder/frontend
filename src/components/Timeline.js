@@ -1705,11 +1705,11 @@ export default class Timeline extends Component {
                                                     {
                                                         this.state.bannerImage?.is_friend === 1 ?
                                                             <>
-                                                                {/* <a className="active" href="javascript:;" title="" data-ripple="" id="timeline-menu" onClick={this.change_section.bind(this, 'timeline')}>Time line</a> */}
-                                                                <a className="text-md" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a>
-                                                                <a className="fs-6" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a>
-                                                                {/* <a className="" href="javascript:;" title="" data-ripple="" id="groups-menu" onClick={this.change_section.bind(this, 'groups')}>Groups</a> */}
-                                                                {/* <a className="" href="javascript:;" title="" data-ripple="" id="about-menu" onClick={this.change_section.bind(this, 'about')}>About</a> */}
+                                                                {/* <a className="active topdata" href="javascript:;" title="" data-ripple="" id="timeline-menu" onClick={this.change_section.bind(this, 'timeline')}>Time line</a> */}
+                                                                <a className="text-md downdata" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a>
+                                                                <a className="fs-6 downdata" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a>
+                                                                {/* <a className="topdata" href="javascript:;" title="" data-ripple="" id="groups-menu" onClick={this.change_section.bind(this, 'groups')}>Groups</a> */}
+                                                                {/* <a className="topdata" href="javascript:;" title="" data-ripple="" id="about-menu" onClick={this.change_section.bind(this, 'about')}>About</a> */}
                                                             </>
                                                             : ''
                                                     }
@@ -1725,8 +1725,8 @@ export default class Timeline extends Component {
                                         <div className="user-avatar avatar1Profile">
                                             <figure>
                                                 {this.state.image_previewProfile ?
-                                                    <img src={this.state.image_previewProfile} style={{ height: '140px', width: '140px', objectFit: 'cover' }} alt="No Data" /> :
-                                                    <img src={this.state.bannerImage?.avatar} style={{ height: '140px', width: '140px', objectFit: 'cover' }} alt="" />}
+                                                    <img src={this.state.image_previewProfile} style={{ height: '130px', width: '130px', objectFit: 'cover' }} alt="No Data" /> :
+                                                    <img src={this.state.bannerImage?.avatar} style={{ height: '130px', width: '130px', objectFit: 'cover' }} alt="" />}
 
 
                                                 {this.loginData?.id === this.userId ?
@@ -1776,11 +1776,11 @@ export default class Timeline extends Component {
                                                 </li> */}
                                                 <li className="main-menu">
 
-                                                    <a className="active" href="javascript:;" title="" data-ripple="" id="timeline-menu" onClick={this.change_section.bind(this, 'timeline')}>Timeline</a>
-                                                    {/* <a className="" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a>
-                                                    <a className="" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a> */}
-                                                    {this.state.bannerImage?.is_friend === 1 ? <a className="" href="javascript:;" title="" data-ripple="" id="groups-menu" onClick={this.change_section.bind(this, 'groups')}>Groups</a> : ''}
-                                                    {/* <a className="" href="javascript:;" title="" data-ripple="" id="about-menu" onClick={this.change_section.bind(this, 'about')}>About</a> */}
+                                                    <a className="active downdata" href="javascript:;" title="" data-ripple="" id="timeline-menu" onClick={this.change_section.bind(this, 'timeline')}>Timeline</a>
+                                                    {/* <a className="text-md topdata" href="javascript:;" title="" data-ripple="" id="followers-menu" onClick={this.change_section.bind(this, 'followers')}>Followers</a> */}
+                                                                {/* <a className="fs-6 topdata" href="javascript:;" title="" data-ripple="" id="following-menu" onClick={this.change_section.bind(this, 'following')}>Following</a> */}
+                                                    {this.state.bannerImage?.is_friend === 1 ? <a className="downdata" href="javascript:;" title="" data-ripple="" id="groups-menu" onClick={this.change_section.bind(this, 'groups')}>Groups</a> : ''}
+                                                    <a className="downdata" href="javascript:;" title="" data-ripple="" id="about-menu" onClick={this.change_section.bind(this, 'about')}>About</a>
                                                 </li>
                                             </ul>
                                         </div>

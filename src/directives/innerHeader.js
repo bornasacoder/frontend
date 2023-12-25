@@ -359,7 +359,7 @@ export default class InnerHeader extends Component {
 
                         <li >
                             <a href="javascript:;" title="Home" data-ripple="" className="head-menu menu-search">
-                                <i className="fa fa-search" aria-hidden="true"></i>
+                                <i  className="fa fa-search text-black" aria-hidden="true"></i>
                             </a>
 
 
@@ -405,7 +405,7 @@ export default class InnerHeader extends Component {
                         {/* <span > */}
                         <li >
                             <a href="javascript:;" title="Notification" onClick={this.notificationReadBell} data-ripple="" className="head-menu menu-a">
-                                <i className="fa fa-bell-o" aria-hidden="true"></i><span className="badge" >{this.notifCount?.unread_count}</span>
+                                <i className="fa fa-bell-o text-black  " aria-hidden="true"></i><span className="badge" >{this.notifCount?.unread_count}</span>
                             </a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y notif" >
                                 <span>{this.notifCount?.unread_count} New Notifications</span>
@@ -506,9 +506,9 @@ export default class InnerHeader extends Component {
                             </div>
                         </li>
                          */}
-                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a"><i className="fa fa-globe"></i></a>
+                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a"><i className="fa fa-globe text-black "></i></a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y languages">
-                                <a href="javascript:;" title=""><i className="ti-check"></i>English</a>
+                                <a href="javascript:;" title=""><i className="ti-check text-black " ></i>English</a>
                                 <a href="javascript:;" title="">Czech</a>
                                 <a href="javascript:;" title="">Hindi</a>
                             </div>
@@ -521,7 +521,7 @@ export default class InnerHeader extends Component {
                             <a href="javascript:;" title=""><span className="status f-away"></span>away</a>
                             <a href="javascript:;" title=""><span className="status f-off"></span>offline</a> */}
                             <span style={{ marginLeft: '15px' }}>{this.state?.bannerImage?.full_name}</span>
-                            <Link to={`/timeLine/${this.loginData?.id}`} onClick={this.loading.bind(this, this.loginData?.id)} title=""><i className="fa fa-user-o" aria-hidden="true"></i>
+                            <Link to={`/timeLine/${this.loginData?.id}`} onClick={this.loading.bind(this, this.loginData?.id)} title=""><i className="fa fa-user-o text-black " aria-hidden="true"></i>
                                 view profile</Link>
                             {/* <Link to={`/timeLine/${this.loginData?.id}`} onClick={this.loading.bind(this, this.loginData?.id)} title=""><i className="ti-pencil-alt"></i>edit profile</Link> */}
                             {/* <a href="javascript:;" title=""><i className="ti-target"></i>activity log</a> */}
