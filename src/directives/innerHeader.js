@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
@@ -8,10 +8,19 @@ import { Notifications } from 'react-push-notification';
 import addNotification from 'react-push-notification';
 import InnerSidebar1 from './innerSidebar1';
 import { useEffect } from 'react';
+import { MdGroups } from "react-icons/md";
+import { SiCoinmarketcap } from "react-icons/si";
+import { SiCrowdsource } from "react-icons/si";
+import { GiVote } from "react-icons/gi";
+import { BsCameraReelsFill } from "react-icons/bs";
+import { BiSolidHome } from "react-icons/bi";
+
 const headers = {
     'Content-Type': 'text/plain'
  };
 export default class InnerHeader extends Component {
+
+   
 
     constructor(props) {
         super(props)
@@ -292,13 +301,16 @@ export default class InnerHeader extends Component {
         this.setState({open:!this.state.open})
     }
 
+   
+
     
     render() {
+      
         
         return (
-            <div className="topbar stick stickClass">
+            <div className="topbar stick stickClass" style={{height:'80px'}}>
                 <span className="logo text-right innerLogo">
-                    <Link title="" to="/" onClick={this.loginPage}><img src="https://nftstars.shop/images/Logo3_new.png" alt=""  style={{height:"60px"}}/></Link>
+                    <Link title="" to="/" onClick={this.loginPage}><img src="https://nftstars.shop/images/Logo3_new.png" alt=""  style={{height:"60px",marginLeft:'20px'}}/></Link>
                     {/* <Link title="" to="/" onClick={this.loginPage}><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" style={{width:"50px",height:"50px",borderRadius:"50%",textAlign:"initial"}}/></Link> */}
 
                 </span>
@@ -311,16 +323,16 @@ export default class InnerHeader extends Component {
                         </div>
                    
                         <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"20px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px', }} onClick={this.handleOpen}>Vtube</button>
+                       <BiSolidHome onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
                         <Link to="/MyVotes">
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Vote</button>
+                        <GiVote onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
                         </Link>
                         <Link to="/allprojects">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>CrowdFund</button>
+                            <SiCrowdsource onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
                         </Link>
-                        <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Market</button>
+                        <SiCoinmarketcap onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
                         <Link to="/discoverygroups">
-                            <button className="add-butn menu-button" style={{ color: '#fff', borderRadius: '5px',}} onClick={this.handleOpen}>Groups</button>
+                            <MdGroups onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
                         </Link>
                         </div>
 
@@ -331,16 +343,49 @@ export default class InnerHeader extends Component {
                     </div>}
 
                     <span className="crowd_fund" >
-                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Vtube</button>
+                        <div className='tool'>
+                        <BiSolidHome className='icon' style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}
+                         />
+                      
+                        <div className='tip' style={{padding:'5px 10px'}}
+                         >
+                            Home
+                        </div>
+                 
+                        </div>
                         <Link to="/MyVotes">
-                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Vote</button>
+                            <div className='tool'>
+                           <GiVote style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                           <div className='tip' style={{padding:'5px 10px'}}
+                         >
+                            Vote
+                        </div>
+                            </div>
                         </Link>
                         <Link to="/allprojects">
-                            <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>CrowdFund</button>
+                            <div className='tool'>
+                            <SiCrowdsource style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                            <div className='tip' style={{padding:'5px 10px'}}
+                         >
+                            Crowd
+                        </div>
+                            </div>
                         </Link>
-                        <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Market</button>
+                        <div className='tool'>
+                          <SiCoinmarketcap style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                          <div className='tip' style={{padding:'5px 10px'}}
+                         >
+                            Market
+                        </div>
+                        </div>
                         <Link to="/discoverygroups">
-                            <button className="add-butn menu-button pt-1 pb-1 pr-2 pl-2" style={{ color: '#fff', borderRadius: '5px',}}>Groups</button>
+                            <div className='tool'>
+                            <MdGroups style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                            <div className='tip' style={{padding:'5px 10px'}}
+                         >
+                            Groups
+                        </div>
+                            </div>
                         </Link>
                         {/* <Link to="/BuyEth">
 
@@ -359,7 +404,7 @@ export default class InnerHeader extends Component {
 
                         <li >
                             <a href="javascript:;" title="Home" data-ripple="" className="head-menu menu-search">
-                                <i  className="fa fa-search text-black" aria-hidden="true"></i>
+                                <i  className="fa fa-search text-black" aria-hidden="true" style={{fontSize:'20px'}}></i>
                             </a>
 
 
@@ -405,7 +450,7 @@ export default class InnerHeader extends Component {
                         {/* <span > */}
                         <li >
                             <a href="javascript:;" title="Notification" onClick={this.notificationReadBell} data-ripple="" className="head-menu menu-a">
-                                <i className="fa fa-bell-o text-black  " aria-hidden="true"></i><span className="badge" >{this.notifCount?.unread_count}</span>
+                                <i className="fa fa-bell-o text-black  " aria-hidden="true" style={{fontSize:'20px'}}></i><span className="badge" >{this.notifCount?.unread_count}</span>
                             </a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y notif" >
                                 <span>{this.notifCount?.unread_count} New Notifications</span>
@@ -506,7 +551,7 @@ export default class InnerHeader extends Component {
                             </div>
                         </li>
                          */}
-                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a"><i className="fa fa-globe text-black "></i></a>
+                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a"><i className="fa fa-globe text-black " style={{fontSize:'20px'}}></i></a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y languages">
                                 <a href="javascript:;" title=""><i className="ti-check text-black " ></i>English</a>
                                 <a href="javascript:;" title="">Czech</a>
