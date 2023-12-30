@@ -264,7 +264,7 @@ section {
 }
 
 .bluesh:before {
-    background: #088dcd;
+    background: #b88b47;
 }
 
 .exthigh-opacity:before {
@@ -519,7 +519,7 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: #b88b47 none repeat scroll 0 0;
     color: #fff;
     float: left;
     height: 100vh;
@@ -563,7 +563,7 @@ header.sticky {
 
 .friend-logo > span::before,
 .friend-logo > span::after {
-    background: #0a98dc none repeat scroll 0 0;
+    background: #b88b47 none repeat scroll 0 0;
     border: 16px solid rgba(255, 255, 255, 0.1);
     border-radius: 100%;
     content: "";
@@ -886,7 +886,7 @@ header.sticky {
 }
 
 .timeline-info .admin-name > h5 {
-    color: #088dcd;
+    color: #b88b47;
     display: inline-block;
     font-size: 20px;
     font-weight: 500;
@@ -10433,7 +10433,7 @@ aside.sidebar.full-style {
     margin-top: 13px;
 }
 .m-shadowboxSubmitButton.green {
-    background-color: #1547fc;
+    background-color: #b88b47;
     color: #fff;
     margin-top: 20px;
 }
@@ -10569,7 +10569,7 @@ aside.sidebar.full-style {
     padding-top: 1px;
 }
 .m-settingsV2__referralsLinks__shareButton--twitter {
-    background-color: #03b3ee;
+    background-color: #b88b47;
 }
 .m-settingsV2__referralsLinks__shareButton--sms {
     background-color: #607d8b;
@@ -10708,7 +10708,7 @@ aside.sidebar.full-style {
 .m-shadowboxSubmitButton {
     box-sizing: border-box;
     max-height: none;
-    background-color: #1547fc;
+    background-color: #b88b47;
     min-height: 42px;
     height: auto;
     min-width: 105px;
@@ -10758,7 +10758,7 @@ aside.sidebar.full-style {
     font-weight: 400;
 }
 .m-dashboardLayout__body a {
-    color: #4690df;
+    color: #b88b47;
 }
 .m-walletBalance--tokens__balanceTitle {
     font-size: 16px;

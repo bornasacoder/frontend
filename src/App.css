@@ -153,7 +153,7 @@ i.fa.fa-bars.font_login{
  
 } */
 .post_Data{
-  background: #088DCD;
+  background: #b88b47;
 }
 .post_commentcss{
   font-size: 19px !important;
@@ -517,7 +517,7 @@ h3.m-boost--creator {
   margin: 0 0 8px;
 }
 .m-boost--creator-selector--selected-label {
-  color: #4690df;
+  color: #b88b47;
 }
 .m-boost--creator-selector {
   display: flex;
@@ -838,7 +838,7 @@ li.post-comment {
   margin: 0 25px 20px 0;
   
   line-height: 20px;
-  color: #1b85d6;
+  color: #b88b47;
 }
 .m-composerPopup__text {
   margin: 0 0 28px;
@@ -855,7 +855,7 @@ li.post-comment {
   object-fit: contain;
 }
 .m-hashtags__trending>* a {
-  color: #1b85d6;
+  color: #b88b47;
 }
 .m-composerPopup__field label:not(.m-composerPopup__trigger) {
   display: block;
@@ -906,7 +906,7 @@ li.post-comment {
 .tooltip {
   /* position: relative;
   display: inline-block; */
-  background: #088DCD !important;
+  background: #b88b47 !important;
   z-index: 999999 !important;
   opacity: 19 !important;
   color: #fff !important;
@@ -1308,7 +1308,7 @@ li.post-comment {
   position: absolute;
 }
 .mdl-color--blue {
-  background-color: #4690df!important;
+  background-color: #b88b47!important;
 }
 /* .mdl-colo--green{
 
@@ -1534,7 +1534,7 @@ body.m-theme__light .mdl-color-text--blue-grey-100 {
   cursor: pointer;
   color:white;
   white-space: pre-line;
-  background: #088DCD none repeat scroll 0 0 !important;
+  background: #b88b47 none repeat scroll 0 0 !important;
   /* background-color: #eff4f7!important; */
 }
 body.m-theme__light .mdl-color--blue-grey-50 {
@@ -1757,10 +1757,10 @@ p.post {
 }
 .select_tag_area > .select_tag{
   padding: 10px;
-  border:1px solid #088dcd;
+  border:1px solid #b88b47;
   border-radius: 15px;
   color: #fff;
-  background: #088dcd;
+  background: #b88b47;
   margin: 6px;
 }
 .select_tag_area > .select_tag > .fa-close{
@@ -1954,7 +1954,7 @@ body .m-theme--wrapper.m-theme--wrapper__light minds-emoji .m-bubble-popup, body
   justify-content: space-between;
   align-items: center;
   position: relative;
-  background: #088dcd!important;
+  background: #b88b47!important;
   color: #fff!important;
 }
 
@@ -2621,14 +2621,14 @@ m-marketing {
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: #088dcd;
+  background-color: #b88b47;
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 
 .react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
-  background-color: #088dcd;
+  background-color: #b88b47;
 }
 
 .react-toggle--checked .react-toggle-track {
@@ -3456,7 +3456,7 @@ m-text-input--autocomplete-container {
   right: 0px;
 }
 .plus_button{
-  color: #088DCD !important;
+  color: #b88b47 !important;
 }
 .plus_button .fa-plus{
   border: 1px solid#088DCD;
@@ -3467,7 +3467,7 @@ m-text-input--autocomplete-container {
 }
 .menu-button{
   transition: 0.5s !important;
-  background-image: linear-gradient(40deg, #088dcd 20%, #000 51%, #000 90%) !important;
+  background-image: linear-gradient(40deg, #b88b47 20%, #000 51%, #000 90%) !important;
   background-position: left center !important;
   -webkit-background-size: 200% auto !important;
   background-size: 200% auto !important;
