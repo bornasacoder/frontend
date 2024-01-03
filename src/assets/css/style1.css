@@ -698,17 +698,18 @@ header.sticky {
 
 
 .top-area > ul {
-    display: inline-block;
+    display:flex;
+    gap: 5px;
     line-height: 56px;
     list-style: outside none none;
     margin-bottom: 0;
-    margin-right: 35px;
+    margin-right: 20px;
     padding-left: 0;
     vertical-align: middle;
 }
 
 .top-area > ul > li {
-    display: inline-block;
+    display: flex;
     position: relative;
     vertical-align: top;
     z-index: 2;
@@ -1376,10 +1377,10 @@ header.sticky {
     width: 100%;
 }
 .attachments {
-    border: 1px solid #eee;
+   
     display: block;
     padding: 10px;
-    text-align: right;
+   
     border-top: 0;
     background: #fff;
 }
@@ -5450,7 +5451,7 @@ h5.m-groupSidebarMarkers__header {
 }
 
 .row.merged20 > div {
-    padding: 15px 7.5px;
+    padding: 0px 7.5px;
 }
 
 

@@ -1137,21 +1137,22 @@ li.post-comment {
 .m-messenger--dockpane .m-messenger--dockpane-tab {
   font-family: Roboto,Helvetica,sans-serif;
   border-radius: 3px 3px 0 0;
-  height: 50px;
-  width: 50px;
+  height: 40px;
+  width: 40px;
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+ top: 20px;
+  right: 70px;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.15), 0 1px 0 -2px rgba(0,0,0,.15), 0 1px 5px 0 rgba(0,0,0,.15); 
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-   background-color: white;
+   background-color: #D8DADF;
   color: #4f4f50;
   /* display: block; */
   cursor: pointer;
 }
+
 .m-messenger--dockpane .m-messenger--dockpane-tab .m-messenger--dockpane-tab-title {
   /* padding: 2px 12px; */
   display: inline-block;
@@ -3035,7 +3036,8 @@ img.img_blck {
 .badge {
   display: inline-block;
   min-width: 10px;
-  padding: 3px 7px;
+  margin-bottom: 15px;
+ margin-right: -10px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;

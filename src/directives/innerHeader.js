@@ -403,7 +403,7 @@ export default class InnerHeader extends Component {
                         {/* <li id="notification_bell" onClick={this.abc}>kkk</li> */}
 
                         <li >
-                            <a href="javascript:;" title="Home" data-ripple="" className="head-menu menu-search">
+                            <a href="javascript:;" title="Home" data-ripple="" style={{background:'#D8DADF',borderRadius:'50%',height:'40px',width:'40px',display:'flex',justifyContent:'center',alignItems:'center'}}>
                                 <i  className="fa fa-search text-black" aria-hidden="true" style={{fontSize:'20px'}}></i>
                             </a>
 
@@ -449,7 +449,7 @@ export default class InnerHeader extends Component {
                         </a></li> */}
                         {/* <span > */}
                         <li >
-                            <a href="javascript:;" title="Notification" onClick={this.notificationReadBell} data-ripple="" className="head-menu menu-a">
+                            <a href="javascript:;" title="Notification" onClick={this.notificationReadBell} data-ripple="" className="head-menu menu-a" style={{background:'#D8DADF',borderRadius:'50%',height:'40px',width:'40px',display:'flex',justifyContent:'center',alignItems:'center'}}>
                                 <i className="fa fa-bell-o text-black  " aria-hidden="true" style={{fontSize:'20px'}}></i><span className="badge" >{this.notifCount?.unread_count}</span>
                             </a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y notif" >
@@ -551,14 +551,14 @@ export default class InnerHeader extends Component {
                             </div>
                         </li>
                          */}
-                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a"><i className="fa fa-globe text-black " style={{fontSize:'20px'}}></i></a>
+                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a" style={{background:'#D8DADF',borderRadius:'50%',height:'40px',width:'40px',display:'flex',justifyContent:'center',alignItems:'center',marginRight:'40px'}}><i className="fa fa-globe text-black " style={{fontSize:'20px'}}></i></a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y languages">
                                 <a href="javascript:;" title=""><i className="ti-check text-black " ></i>English</a>
                                 <a href="javascript:;" title="">Czech</a>
                                 <a href="javascript:;" title="">Hindi</a>
                             </div>
                         </li>
-                        <div className="user-img">
+                        <div className="user-img" >
                         <img src={this.state?.bannerImage?.avatar} alt="" />
                         <span className="status f-online"></span>
                         <div className="user-setting" style={{ marginRight: '30px' }}>
