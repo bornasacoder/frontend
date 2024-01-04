@@ -1,6 +1,6 @@
 import React, { Component, useState } from 'react';
 import Cookies from 'js-cookie';
-import { Link } from 'react-router-dom';
+import { Link,useLocation,withRouter } from 'react-router-dom';
 import $ from 'jquery';
 import axios from 'axios';
 import toastr from 'reactjs-toastr';
@@ -15,15 +15,19 @@ import { GiVote } from "react-icons/gi";
 import { BsCameraReelsFill } from "react-icons/bs";
 import { BiSolidHome } from "react-icons/bi";
 
+import inner from './inner.css'
+
+
 const headers = {
     'Content-Type': 'text/plain'
  };
-export default class InnerHeader extends Component {
+ class InnerHeader extends Component {
 
-   
+    
 
     constructor(props) {
         super(props)
+        console.log(this.props.location)
         let data = Cookies.getJSON('name');
         this.loginData = data.user_data
         this.main_search = this.main_search.bind(this);
@@ -31,6 +35,7 @@ export default class InnerHeader extends Component {
         this.notificationRead = this.notificationRead.bind(this)
         this.notificationReadBell = this.notificationReadBell.bind(this);
         this.notificationReadSingle = this.notificationReadSingle.bind(this)
+        
         this.state = {
             main_search_val: '',
             searchData: [],
@@ -38,6 +43,7 @@ export default class InnerHeader extends Component {
             open:this.props.open
         }
     }
+    
 
     main_search_val(e) {
         this.setState({
@@ -301,17 +307,20 @@ export default class InnerHeader extends Component {
         this.setState({open:!this.state.open})
     }
 
-   
-
+  
+    
     
     render() {
       
-        
+
         return (
-            <div className="topbar stick stickClass" style={{height:'80px'}}>
+            <div className="topbar stick stickClass">
+
+                <div className='middlebar'>
+
+               
                 <span className="logo text-right innerLogo">
-                    <Link title="" to="/" onClick={this.loginPage}><img src="https://nftstars.shop/images/Logo3_new.png" alt=""  style={{height:"60px",marginLeft:'20px'}}/></Link>
-                    {/* <Link title="" to="/" onClick={this.loginPage}><img src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" style={{width:"50px",height:"50px",borderRadius:"50%",textAlign:"initial"}}/></Link> */}
+                    <Link title="" to="/" onClick={this.loginPage}><img className='logosize' src="https://nftstars.shop/images/Logo3_new.png" alt="" /></Link>
 
                 </span>
                 <Notifications />
@@ -322,19 +331,7 @@ export default class InnerHeader extends Component {
                         <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
                         </div>
                    
-                        <div style={{display:"flex",gap:"20px",flexWrap:"wrap",marginTop:"20px",padding:"20px",boxShadow:"0px 0px 5px -2px rgba(0,0,0,0.75)"}}>
-                       <BiSolidHome onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
-                        <Link to="/MyVotes">
-                        <GiVote onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
-                        </Link>
-                        <Link to="/allprojects">
-                            <SiCrowdsource onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
-                        </Link>
-                        <SiCoinmarketcap onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
-                        <Link to="/discoverygroups">
-                            <MdGroups onClick={this.handleOpen} style={{fontSize:'35px',color:'#D8B471'}}/>
-                        </Link>
-                        </div>
+                      
 
                         <div className='mt-2'>
                             <InnerSidebar1/>
@@ -343,8 +340,10 @@ export default class InnerHeader extends Component {
                     </div>}
 
                     <span className="crowd_fund" >
+
+                        <Link to='/dashboard' className={this.props.location?.pathname === "/dashboard" ? 'inner active' : 'inner navlink'}>
                         <div className='tool'>
-                        <BiSolidHome className='icon' style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}
+                        <BiSolidHome className='icon' style={{fontSize:'35px',cursor:'pointer'}}
                          />
                       
                         <div className='tip' style={{padding:'5px 10px'}}
@@ -353,18 +352,19 @@ export default class InnerHeader extends Component {
                         </div>
                  
                         </div>
-                        <Link to="/MyVotes">
+                        </Link>
+                        <Link to="/MyVotes" className={this.props.location?.pathname === "/MyVotes" ? 'inner active' : 'inner navlink'}>
                             <div className='tool'>
-                           <GiVote style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                           <GiVote style={{fontSize:'35px',cursor:'pointer'}}/>
                            <div className='tip' style={{padding:'5px 10px'}}
                          >
                             Vote
                         </div>
                             </div>
                         </Link>
-                        <Link to="/allprojects">
+                        <Link to="/allprojects" className={this.props.location?.pathname === "/allprojects" ? 'inner active' : 'inner navlink'}>
                             <div className='tool'>
-                            <SiCrowdsource style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                            <SiCrowdsource style={{fontSize:'35px',cursor:'pointer'}}/>
                             <div className='tip' style={{padding:'5px 10px'}}
                          >
                             Crowd
@@ -372,15 +372,15 @@ export default class InnerHeader extends Component {
                             </div>
                         </Link>
                         <div className='tool'>
-                          <SiCoinmarketcap style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                          <SiCoinmarketcap style={{fontSize:'35px',cursor:'pointer'}}/>
                           <div className='tip' style={{padding:'5px 10px'}}
                          >
                             Market
                         </div>
                         </div>
-                        <Link to="/discoverygroups">
+                        <Link to="/discoverygroups" className={this.props.location?.pathname === "/discoverygroups" ? 'inner active' : 'inner navlink'}>
                             <div className='tool'>
-                            <MdGroups style={{fontSize:'35px',cursor:'pointer',color:'#D8B471'}}/>
+                            <MdGroups style={{fontSize:'35px',cursor:'pointer'}}/>
                             <div className='tip' style={{padding:'5px 10px'}}
                          >
                             Groups
@@ -484,141 +484,64 @@ export default class InnerHeader extends Component {
                             </div>
                             {/* </span> */}
                         </li>
-                        {/* <li>
-                            <a href="javascript:;" title="Messages" data-ripple="" className="head-menu">
-                                <i className="ti-comment"></i>
-                                <span>1200</span></a>
-                            <div className="dropdowns ps-container ps-theme-default ps-active-y ">
-                                <span>5 New Messages</span>
-                                <ul className="drops-menu">
-                                    <li>
-                                        <a href="javascript:;" title="">
-                                            <img src="../../thumb-1.jpg" alt="" />
-                                            <div className="mesg-meta">
-                                                <h6>sarah Loren</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span className="tag green">New</span>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" title="">
-                                            <img src="../../thumb-2.jpg" alt="" />
-                                            <div className="mesg-meta">
-                                                <h6>Jhon doe</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span className="tag red">Reply</span>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" title="">
-                                            <img src="../../thumb-3.jpg" alt="" />
-                                            <div className="mesg-meta">
-                                                <h6>Andrew</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span className="tag blue">Unseen</span>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" title="">
-                                            <img src="../../thumb-4.jpg" alt="" />
-                                            <div className="mesg-meta">
-                                                <h6>Tom cruse</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span className="tag">New</span>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;" title="">
-                                            <img src="../../thumb-5.jpg" alt="" />
-                                            <div className="mesg-meta">
-                                                <h6>Amy</h6>
-                                                <span>Hi, how r u dear ...?</span>
-                                                <i>2 min ago</i>
-                                            </div>
-                                        </a>
-                                        <span className="tag">New</span>
-                                    </li>
-                                </ul>
-                                <a href="messages.html" title="" className="more-mesg">view more</a>
-                            </div>
-                        </li>
-                         */}
-                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu menu-a" style={{background:'#D8DADF',borderRadius:'50%',height:'40px',width:'40px',display:'flex',justifyContent:'center',alignItems:'center',marginRight:'40px'}}><i className="fa fa-globe text-black " style={{fontSize:'20px'}}></i></a>
+                      
+                        <li><a href="javascript:;" title="Languages" data-ripple="" className="head-menu3 menu-a" style={{background:'#D8DADF',borderRadius:'50%',height:'40px',width:'40px',display:'flex',justifyContent:'center',alignItems:'center'}}><i className="fa fa-globe text-black " style={{fontSize:'20px'}}></i></a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y languages">
                                 <a href="javascript:;" title=""><i className="ti-check text-black " ></i>English</a>
                                 <a href="javascript:;" title="">Czech</a>
                                 <a href="javascript:;" title="">Hindi</a>
                             </div>
                         </li>
-                        <div className="user-img" >
+                        <div  className="user-img" >
                         <img src={this.state?.bannerImage?.avatar} alt="" />
                         <span className="status f-online"></span>
                         <div className="user-setting" style={{ marginRight: '30px' }}>
-                            {/* <a href="javascript:;" title=""><span className="status f-online"></span>online</a>
-                            <a href="javascript:;" title=""><span className="status f-away"></span>away</a>
-                            <a href="javascript:;" title=""><span className="status f-off"></span>offline</a> */}
-                            <span style={{ marginLeft: '15px' }}>{this.state?.bannerImage?.full_name}</span>
+                            
+                            <span  style={{ marginLeft: '15px' }}>{this.state?.bannerImage?.full_name}</span>
                             <Link to={`/timeLine/${this.loginData?.id}`} onClick={this.loading.bind(this, this.loginData?.id)} title=""><i className="fa fa-user-o text-black " aria-hidden="true"></i>
                                 view profile</Link>
-                            {/* <Link to={`/timeLine/${this.loginData?.id}`} onClick={this.loading.bind(this, this.loginData?.id)} title=""><i className="ti-pencil-alt"></i>edit profile</Link> */}
-                            {/* <a href="javascript:;" title=""><i className="ti-target"></i>activity log</a> */}
+                           
                             <Link to={`/setting`} onClick={this.loadingSetting.bind(this, this.loginData?.id)} title=""><i className="ti-settings"></i>account setting</Link>
                             <Link to="/" onClick={this.Logout} title=""><i className="ti-power-off"></i>log out</Link>
                         </div>
                     </div>
                     
-                   <div className='sidebar-list' style={{color:"#9A9A9A",zIndex:"999"}}>
-                   <i  className="fa fa-list" aria-hidden="true" style={{fontSize:"20px"}} onClick={this.handleOpen}></i>
-                    </div> 
+                  
                     </ul>
                    
 
-                    {/* <span className="ti-menu main-menu" data-ripple=""><span className="ripple"><span className="ink" style={{ height: '20px', width: '20px', backgroundColor: 'rgb(217, 217, 217)', top: '-3px', left: '-1.39062px' }}></span></span></span> */}
-                    {/* <i className="fa fa-bars font_login" aria-hidden="true"></i> */}
-                    {/* <div className="side-panel">
-                        <h4 className="panel-title">General Setting</h4>
-                        <form method="post">
-                            <div className="setting-row">
-                                <span>use night mode</span>
-                                <input type="checkbox" id="nightmode1" />
-                                <label data-on-label="ON" data-off-label="OFF"></label>
-                            </div>
-                            <div className="setting-row">
-                                <span>Notifications</span>
-                                <input type="checkbox" id="switch22" />
-                                <label data-on-label="ON" data-off-label="OFF"></label>
-                            </div>
-                            <div className="setting-row">
-                                <span>Notification sound</span>
-                                <input type="checkbox" id="switch33" />
-                                <label data-on-label="ON" data-off-label="OFF"></label>
-                            </div>
-                            <div className="setting-row">
-                                <span>My profile</span>
-                                <input type="checkbox" id="switch44" />
-                                <label data-on-label="ON" data-off-label="OFF"></label>
-                            </div>
-                            <div className="setting-row">
-                                <span>Show profile</span>
-                                <input type="checkbox" id="switch55" />
-                                <label data-on-label="ON" data-off-label="OFF"></label>
-                            </div>
-                        </form>
-
-
-                    </div> */}
+                   
                 </div>
 
+                </div>
+
+                <div className='appbar' >
+                <div aria-hidden='true' style={{display:"flex",justifyContent:'space-between',width:'100%'}}>
+                      <Link to="/dashboard" className={this.props.location?.pathname === "/dashboard" ? 'inner active' : 'inner navlink'}>
+                       <BiSolidHome onClick={this.handleOpen} style={{fontSize:'30px'}}/>
+                      </Link>
+                        <Link to="/MyVotes" className={this.props.location?.pathname === "/MyVotes" ? 'inner active' : 'inner navlink'}>
+                        <GiVote onClick={this.handleOpen} style={{fontSize:'30px'}}/>
+                        </Link>
+                        <Link to="/allprojects" className={this.props.location?.pathname === "/allProjects" ? 'inner active' : 'inner navlink'}>
+                            <SiCrowdsource onClick={this.handleOpen} style={{fontSize:'30px'}}/>
+                        </Link >
+                        <Link to='/market' className={this.props.location?.pathname === "/market" ? 'inner active' : 'inner navlink'}>
+                        <SiCoinmarketcap onClick={this.handleOpen} style={{fontSize:'30px'}}/>
+                        </Link>
+                        <Link to="/discoverygroups" className={this.props.location?.pathname === "/discoverygroups" ? 'inner active' : 'inner navlink'}>
+                            <MdGroups onClick={this.handleOpen} style={{fontSize:'30px'}}/>
+                        </Link>
+                        </div>
+                <div className='sidebar-list' style={{color:"#9A9A9A",zIndex:"999"}}>
+                   <i  className="fa fa-list" aria-hidden="true" style={{fontSize:"20px"}} onClick={this.handleOpen}></i>
+                    </div> 
+
+                </div>
 
             </div>
         )
     }
 }
+
+export default withRouter(InnerHeader);

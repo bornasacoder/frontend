@@ -140,7 +140,7 @@ export default class InnerSidebar extends Component {
         return (
             <div className="col-lg-3 col-md-0  ">
                 <aside className="sidebar fixed main-sidebar" style={{top:"115px"}}>
-                    <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '307px', marginLeft: '-10px' }}>
+                    <div className="widget" style={{ height: '100vh', overflowY: 'auto', width: '350px', marginLeft: '-10px' }}>
                         <br />
                         <ul className="naves">
                             <li id="li_self">

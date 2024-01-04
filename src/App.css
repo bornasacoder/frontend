@@ -1733,6 +1733,12 @@ p.post {
   width: 50px;
   object-fit: cover;
 }
+@media(max-width:500px) {
+  .user-img{
+    visibility: hidden;
+  }
+
+}
 /* .new-postbox img{
   height:54px;
    width:54px;

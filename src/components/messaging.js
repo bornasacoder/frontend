@@ -3,6 +3,7 @@ import axios from 'axios';
 import $ from 'jquery';
 import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
+import { RiMessengerFill } from "react-icons/ri";
 const headers = {
    'Content-Type': 'text/plain'
 };
@@ -542,7 +543,10 @@ export default class Messaging extends Component {
 
             <div className="m-messenger--userlist m-messenger--dockpane">
                <div className="m-messenger--dockpane-tab" id="message-head">
-                  <div className="m-messenger--dockpane-tab-title"><i className="material-icons fa fa-comment"></i></div>
+                  <div className="m-messenger--dockpane-tab-title">
+                     {/* <i className="material-icons fa fa-comment"></i> */}
+                     <RiMessengerFill style={{fontSize:'25px',color:'black'}} />
+                     </div>
                   
                   <div className="m-messenger--dockpane-tab-actions">
                
@@ -559,7 +563,9 @@ export default class Messaging extends Component {
       </div>
 
                   <div minds-messenger-scroll="" className="m-messenger--userlist-conversations">
-                  <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2"><i className="material-icons fa fa-search icons-set"></i><input type="text" placeholder="Search Messenger..." id="user_search" onChange={this.user_search1.bind(this, 1)} /></div>
+                  <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2">
+                     <i className="material-icons fa fa-search icons-set"></i>
+                     <input type="text" placeholder="Search Messenger..." id="user_search" onChange={this.user_search1.bind(this, 1)} /></div>
                      {(this.state.users_list.length > 0) ?
                         this.state.users_list.map(item => (
                            <div className="m-messenger--userlist-conversations-item " onClick={this.select_user.bind(this, item)}><img className="mdl-shadow--2dp" src={item.avatar} />

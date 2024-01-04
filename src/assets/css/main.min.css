@@ -7049,7 +7049,8 @@ pre code {
 @media (max-width:500px) {
 
 	.m-messenger--dockpane .m-messenger--dockpane-tab {
-	  right: 92px;
+	  right: 10px;
+	  top: 14px;
 	}
 	
   }
@@ -15475,7 +15476,9 @@ button.bg-dark:hover {
 }
 
 .text-right {
-	text-align: left!important
+	text-align: left!important;
+	margin-right: 0px;
+
 }
 
 .text-center {
