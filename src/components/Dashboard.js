@@ -16,6 +16,8 @@ import Messaging from '../components/messaging'
 import { TwitterShareButton, TwitterIcon, FacebookShareButton, FacebookIcon, EmailIcon, EmailShareButton } from 'react-share';
 // const nl2br = require('react-nl2br');
 import TextareaAutosize from "react-autosize-textarea"
+import GliderSlider from './GliderSlider';
+import StorySlider from './StorySlider';
 
 // const {
 //     FacebookShareButton,
@@ -1585,6 +1587,10 @@ export default class Dashboard extends Component {
                                             <InnerSidebar />
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-6  setStick" >
+
+                                             <StorySlider/>
+
+
                                                 <div className="central-meta new-pst" >
                                                     <div className="new-postbox">
                                                         
@@ -1594,7 +1600,7 @@ export default class Dashboard extends Component {
                                                             <figure>
                                                             <img className='avatar' src={this.state.bannerImage?.avatar} alt=""  />
                                                            </figure>
-                                                                <TextareaAutosize rows="1" id="post_text" style={{ fontSize: '17px',border:'1px solid rgba(0,0,0,0.1)',height:'30px',borderRadius:'20px' }} value={this.state.message}
+                                                                <TextareaAutosize rows="1" id="post_text" style={{ fontSize: '17px',border:'1px solid rgba(0,0,0,0.1)',borderRadius:'20px' }} value={this.state.message}
                                                                     onChange={this.onChange} name="message" placeholder="Write something..."></TextareaAutosize>
 
                                                                 </div>
