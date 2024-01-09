@@ -4,6 +4,7 @@ import $ from 'jquery';
 import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
 import { RiMessengerFill } from "react-icons/ri";
+import { BsThreeDots } from "react-icons/bs";
 const headers = {
    'Content-Type': 'text/plain'
 };
@@ -553,25 +554,35 @@ export default class Messaging extends Component {
                   </div>
                </div>
                <div className="m-messenger--dockpane-container" id="message_user_list" style={{ display: "none" }}>
-                  <div className="m-messenger--dockpane-tab-ribbon mdl-color-text--blue-grey-300" hidden="">
-           <h6 className='text-black' >Chats</h6>
-         {/* <div className="m-messenger--dockpane-tab-icon d-flex align-items-center h-100 " hidden=""> */}
-         {/* </div> */}
+                  {/* <div className="m-messenger--dockpane-tab-ribbon mdl-color-text--blue-grey-300" hidden="">
+         
          <div className="m-messenger--dockpane-tab-icon mdl-color-text--blue-grey-300">
          </div>
       
-      </div>
+      </div> */}
 
                   <div minds-messenger-scroll="" className="m-messenger--userlist-conversations">
+                     <div>
+                        <p style={{fontSize:'26px',fontWeight:'500',color:'black'}}>Chats</p>
+                     </div>
                   <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2">
                      <i className="material-icons fa fa-search icons-set"></i>
                      <input type="text" placeholder="Search Messenger..." id="user_search" onChange={this.user_search1.bind(this, 1)} /></div>
                      {(this.state.users_list.length > 0) ?
                         this.state.users_list.map(item => (
-                           <div className="m-messenger--userlist-conversations-item " onClick={this.select_user.bind(this, item)}><img className="mdl-shadow--2dp" src={item.avatar} />
+                           <div className="m-messenger--userlist-conversations-item " onClick={this.select_user.bind(this, item)}>
+                              <div style={{display:'flex',gap:'5px',alignItems:'center'}}>
+                              <img className="mdl-shadow--2dp" src={item.avatar} />
                            <span className="m-conversation-label">{item.full_name}</span>
-                           <span className="m-conversation-icons"><span className="m-conversation-new mdl-color--green" hidden=""></span>
+                              </div>
+
+                              <div className='dot' style={{display:'flex',alignItems:'center'}}>
+                              <div className='hiddendots' style={{border:'0.001px solid rgba(0,0,0,0.2)',borderRadius:'50px',display:'flex',alignItems:'center',background:'white'}}>
+                               <BsThreeDots style={{fontSize:'20px',margin:'5px'}}/>
+                              </div>
+                              <span className="m-conversation-icons"><span className="m-conversation-new mdl-color--green" hidden=""></span>
                            <span className="m-conversation-online mdl-color--blue"></span></span>
+                              </div>
                            </div>
                         )) :
                         <p className="center">Search user</p>

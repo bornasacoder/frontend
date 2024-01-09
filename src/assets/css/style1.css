@@ -1388,7 +1388,7 @@ header.sticky {
 }
 
 .avatar{
-    height: 50px;
+    height: 45px;
     width: 50px;
     border-radius: 100px;
 }
@@ -1400,6 +1400,7 @@ header.sticky {
     display: inline-block;
     width: 100%;
     padding: 25px;
+    margin-top: 20px;
 }
 @media(max-width:500px){
     .central-meta{
@@ -1410,7 +1411,7 @@ header.sticky {
         align-items: center;
     }
     .avatar{
-        height: 45px;
+        height: 40px;
         width: 45px;
         margin-top: 5px;
         border-radius: 80px;
@@ -1418,11 +1419,12 @@ header.sticky {
 }
 
 .new-postbox {
-    display: inline-block;
+   
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+   
 }
 
 .new-postbox > figure {
@@ -1433,10 +1435,10 @@ header.sticky {
 }
 
 .newpst-input {
-    display: inline-block;
-    margin-left: 10px;
+    display:flex;
+    
     vertical-align: top;
-    width: 85.5%;
+    width: 90%;
 }
 
 .newpst-input > form {
@@ -5522,7 +5524,13 @@ h5.m-groupSidebarMarkers__header {
 }
 
 .row.merged20 > div {
-    padding: 0px 7.5px;
+    padding: 0px 10px;
+}
+
+@media(max-width:500px){
+    .row.merged20 > div {
+        padding: 0px;
+    }
 }
 
 

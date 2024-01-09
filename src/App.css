@@ -1263,23 +1263,28 @@ li.post-comment {
 }
 .m-messenger--userlist .m-messenger--userlist-conversations {
   
-  max-height: 70vh;
+  max-height: 77vh;
   overflow: scroll;
   overflow-x: hidden;
+  width: 318px;
+  background-color: white;
+  padding: 10px;
 }
 .m-messenger--userlist .m-messenger--userlist-conversations-item {
   cursor: pointer;
   /* margin-top: 0/px; */
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .mdl-shadow--2dp {
   box-shadow: 0 2px 2px 0 rgba(0,0,0,.07), 0 3px 1px -2px rgba(0,0,0,.1), 0 1px 5px 0 rgba(0,0,0,.07);
 
 }
 .m-messenger--userlist .m-messenger--userlist-conversations-item img {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   margin: 8px;
   flex-shrink: 0;
@@ -1328,6 +1333,18 @@ li.post-comment {
   display: flex;
   align-items: center;
 }
+
+.m-messenger--userlist-conversations-item .dot .hiddendots{
+ visibility: hidden;
+}
+
+.m-messenger--userlist-conversations-item:hover .dot .hiddendots{
+  visibility: visible;
+ }
+ .m-messenger--userlist-conversations-item:hover{
+  background-color: rgb(238, 237, 237);
+  border-radius: 5px;
+ }
 .m-messenger--dockpane .m-conversation-icons {
   height: 8px;
   width: 24px;
@@ -1350,7 +1367,6 @@ li.post-comment {
 .m-messenger--userlist .m-messenger--userlist-search>input {
   border: 0;
   height: 100%;
-  margin: 0px 0px;
   z-index: 1;
   width: 100%;
   vertical-align: middle;
@@ -1394,6 +1410,20 @@ li.post-comment {
   width: 100%;
   display: block;
   position: relative;
+  top: -60px;
+  left: -40px;
+  border: 0.01px solid rgb(169, 168, 168);
+  width: 320px;
+  border-radius: 10px;
+  height: 80vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+@media(max-width:600px){
+.m-messenger--dockpane-container{
+  left: -10px;
+  top: -50px;
+}
 }
 
 .m-messenger--dockpane .m-messenger--dockpane-tab-ribbon {
@@ -2852,7 +2882,7 @@ button#dropdownMenuButton {
 }
 .text-black {
   color: #000;
-  font-size: 15px;
+  font-size: 20px;
 }
 /*modal css*/
 .m-wireCreatorOwnerBlock__channelBanner {

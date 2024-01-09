@@ -1596,11 +1596,11 @@ export default class Dashboard extends Component {
                                                         
                                                         <div className="newpst-input">
                                                             <form onSubmit={(this.state.detailPost != '') ? this.handleSubmitFile : this.handleSubmitFile} style={{border:'none'}}>
-                                                                <div style={{display:'flex',gap:'10px',width:'100%'}}>
-                                                            <figure>
+                                                                <div style={{display:'flex',gap:'10px',width:'100%',alignItems:'center'}}>
+                                                            <figure style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
                                                             <img className='avatar' src={this.state.bannerImage?.avatar} alt=""  />
                                                            </figure>
-                                                                <TextareaAutosize rows="1" id="post_text" style={{ fontSize: '17px',border:'1px solid rgba(0,0,0,0.1)',borderRadius:'20px' }} value={this.state.message}
+                                                                <TextareaAutosize rows="1" id="post_text" style={{border:'1px solid rgba(0,0,0,0.1)',borderRadius:'20px',height:'20px',background:'#E4E6E9' }} value={this.state.message}
                                                                     onChange={this.onChange} name="message" placeholder="Write something..."></TextareaAutosize>
 
                                                                 </div>
@@ -1610,8 +1610,8 @@ export default class Dashboard extends Component {
                                                                 <input type="text" style={{ display: 'none' }} readOnly value={this.state.edit_file_path} onChange={this.onChange} name="edit_file_path" id="edit_file_path" />
                                                                 <input type="text" style={{ display: 'none' }} readOnly value={this.state.edit_file_type} onChange={this.onChange} name="edit_file_type" id="edit_file_type" />
 
-                                                                <div className="attachments" style={{height:'40px',marginTop:'10px',border:'none'}}>
-                                                                    <ul style={{display:'flex',justifyContent:'space-between',alignItems:'center',width:'100%'}}>
+                                                                <div className="attachments" style={{height:'40px',marginTop:'10px',borderTop:'0.1px solid rgba(0,0,0,0.1)'}}>
+                                                                    <ul style={{display:'flex',justifyContent:'space-between',alignItems:'center',width:'100%',marginTop:'10px'}}>
 
                                                                         <li>
                                                                             <i className="fa fa-image" style={{ fontSize: '20px', marginRight: '5px' }}></i>
