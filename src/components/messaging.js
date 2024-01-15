@@ -140,7 +140,7 @@ export default class Messaging extends Component {
       if (i === 0) {
          return 300;
       } else {
-         return (260 * i) + 300;
+         return (330 * i) + 300;
       }
    }
    minimize_chat(item) {
@@ -440,19 +440,19 @@ export default class Messaging extends Component {
                      */}
                     
                     
-                     <div className="m-messenger--conversation m-messenger--dockpane m-messenger--dockpane-open" style={{ right: `${this.manage_style(i)}px`, bottom: "5px" }} >
+                     <div className="m-messenger--conversation m-messenger--dockpane m-messenger--dockpane-open" style={{ right: `${this.manage_style(i)}px` }} >
                         <div className="coment_box">
                            <div className="m-messenger--dockpane-tab-title" onClick={this.minimize_chat.bind(this, item)}>
                                <img tabIndex="0" src={this.state.bannerImage?.avatar} className="avatar-setting" />
                               <span className="">{item.full_name}</span>
                            </div>
                            <div className="m-messenger--dockpane-tab-actions"><i className="material-icons mdl-color-text--blue-grey-100" hidden=""></i><i data-cy="data-minds-conversation-options" className="material-icons fa fa-ellipsis-v" 
-                           style={{color:"white"}}
+                           style={{color:"white",cursor:'pointer'}}
                            onClick={this.option_chat.bind(this, item)}></i>&nbsp;<i data-cy="data-minds-conversation-close" onClick={this.close_chat.bind(this, item)}
-                           style={{color:"white"}}
+                           style={{color:"white",cursor:'pointer'}}
                            className="material-icons fa fa-close"></i></div>
                         </div>
-                        <div className="m-messenger--dockpane-container" id={"chat_box" + item.id} style={{ display: item.open_chat_box == 0 ? 'none' : '' }}>
+                        <div className="m-messenger--dockpane-container2" id={"chat_box" + item.id} style={{ display: item.open_chat_box == 0 ? 'none' : '' }}>
 
                            <div className="m-messenger--dockpane-tab-ribbon" id={"chat_box_option" + item.id} style={{ display: 'none' }} >
                               <div data-cy="data-minds-conversation-destroy" className="m-messenger--dockpane-tab-icon mdl-color-text--blue-grey-300" onClick={this.destroy_chat.bind(this, item)}>
@@ -478,7 +478,7 @@ export default class Messaging extends Component {
 
                            {(item.unread_count>0)?this.updateScroll('scroll_chat_box'+item.id):''}   
 
-                           <div minds-messenger-scroll="" id={"scroll_chat_box" + item.id} className="div_bottom_set m-messenger--conversation-messages ng-star-inserted">
+                           <div minds-messenger-scroll="" id={"scroll_chat_box" + item.id} className="div_bottom_set m-messenger--conversation-messages ng-star-inserted" >
                               {(item.message.length > 0) ?
                                  item.message.map((msg, i) => (
                                     (msg.sender_id == this.loginData.id) ?
@@ -512,7 +512,7 @@ export default class Messaging extends Component {
                            {(item.blocked_chat_by == 0) ?
                               <>
                                  <div class="m-messenger--conversation-composer ng-star-inserted main_msg_area" style={{background:'#f0f0f0', height:"45px", display:"flex", justifyContent:"center", alignItems:"center"}}>
-                                    <textarea name="message" maxlength="180" rows="1" id={"msg_textarea" + item.id} placeholder="Send a message..." onKeyUp={(e) => this.something(e,item) } class="ng-untouched ng-pristine ng-valid" style={{ height: " 36px" }} onClick={this.hide_emoji_box.bind(this, item)}></textarea>
+                                    <textarea name="message" maxlength="320" rows="1" id={"msg_textarea" + item.id} placeholder="Send a message..." onKeyUp={(e) => this.something(e,item) } class="ng-untouched ng-pristine ng-valid" style={{ height: " 36px" }} onClick={this.hide_emoji_box.bind(this, item)}></textarea>
                                     <i class="material-icons mdl-color-text--blue-grey-600 fa fa-smile-o"
                                     style={{color:"#0866FF"}}
                                     onClick={this.show_emoji_box.bind(this, item)} ></i>
