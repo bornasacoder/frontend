@@ -7864,9 +7864,9 @@ pre code {
 	}
 	.col-lg-9 {
 		-webkit-box-flex: 0;
-		-ms-flex: 0 0 75%;
-		flex: 0 0 75%;
-		max-width: 75%
+		-ms-flex: 0 0 66%;
+		flex: 0 0 66%;
+		max-width: 66%
 	}
 	.col-lg-10 {
 		-webkit-box-flex: 0;

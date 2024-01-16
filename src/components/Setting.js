@@ -938,8 +938,9 @@ export default class Setting extends Component {
                                     <div className="col-lg-12">
                                         <div className="row merged20" id="page-contents">
                                             {/* //================== Sidebar */}
-
+                                          <div style={{marginTop:'60px'}}>
                                             <InnerSidebar />
+                                          </div>
 
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-9 setStick2" style={{ marginTop: '42px' }}>

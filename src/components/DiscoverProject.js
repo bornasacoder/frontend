@@ -158,8 +158,9 @@ export default class DiscoveryProjects extends Component {
                                     <div className="col-lg-12">
                                         <div className="row merged20" id="page-contents">
                                             {/* //================== Sidebar */}
-
+                                           <div style={{marginTop:'90px'}}>
                                             <InnerSidebar />
+                                           </div>
 
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-9 setStick">

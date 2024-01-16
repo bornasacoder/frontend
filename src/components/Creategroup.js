@@ -208,18 +208,20 @@ export default class Creategroup extends Component {
                                     <div className="col-lg-12">
                                         <div className="row merged20" id="page-contents">
                                             {/* //================== Sidebar */}
-
+                                            <div style={{marginTop:'90px'}}>
                                             <InnerSidebar />
+                                            </div>
 
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-8 setStick" >
                                                 <div className="central-meta new-pst" >
                                                     <div className="new-postbox" >
-                                                        <div className="m-modalV2__inner m-groups__create m-border" style={{padding:"20px"}}>
+                                                        <div className="m-modalV2__inner m-groups__create m-border p-4" style={{width:'100%'}}>
+                                                        <div className="m-modalV2__body m-formWrapper" >
                                                             <div className="m-modalV2__header m-groupsCreate__header">
                                                                 <h2 className="m-modalV2Header__title"> Create Group </h2>
                                                             </div>
-                                                            <div className="m-modalV2__body m-formWrapper">
+                                                          
                                                                 <form onSubmit={this.handleSubmitFile} className="m-groupsCreate__form m-formWrapper m-formLayout--buttonRight ">
                                                                     <div className="m-form__fieldsContainer">
                                                                         <div className="m-form__field--text stretchedField">
@@ -303,6 +305,7 @@ export default class Creategroup extends Component {
                                                                 {/* <div class="example"> */}
                                                                 {/* <form><textarea rows="5" class="emojis-wysiwyg1">Hello :neckbeard:</textarea></form> */}
                                                                 {/* </div> */}
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>

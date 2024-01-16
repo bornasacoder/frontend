@@ -1592,6 +1592,8 @@ export default class Dashboard extends Component {
 
 
                                                 <div className="central-meta new-pst" >
+
+                                                    
                                                     <div className="new-postbox">
                                                         
                                                         <div className="newpst-input">

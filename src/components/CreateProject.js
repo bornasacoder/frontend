@@ -218,10 +218,13 @@ export default class Createproject extends Component {
                                             {/* <!-- sidebar --> */}
                                             <div className="col-lg-8 setStick">
                                                 <div className="central-meta new-pst">
-                                                    <div className="new-postbox" >
-                                                        <div className="m-modalV2__inner m-groups__create m-border p-4" style={{width:"100%"}} >
+                                                    <div className="new-postbox"style={{flexDirection:'column'}} >
+                                                            <div style={{width:'100%'}}>
+                                                                <h1 style={{color:'black'}}>Tell us what you need done! </h1>
+                                                            </div>
+                                                    <div className="m-modalV2__inner m-groups__create m-border p-4" style={{width:'100%'}} >
                                                             
-                                                            <div className="m-modalV2__body m-formWrapper">
+                                                        <div className="m-modalV2__body m-formWrapper">
                                                             <div className="m-modalV2__header m-groupsCreate__header">
                                                                 <h2 className="m-modalV2Header__title"> Create Project </h2>
                                                             </div>
@@ -328,14 +331,7 @@ export default class Createproject extends Component {
                                                                     </div>
                                                                 </form>
 
-                                                                {/* <div class="example">
-                                                                    <h2>Plain-Text</h2>
-                                                                    <form><textarea rows="5" class="emojis-plain">Hello :neckbeard:</textarea></form>
-                                                                </div> */}
-
-                                                                {/* <div class="example"> */}
-                                                                {/* <form><textarea rows="5" class="emojis-wysiwyg1">Hello :neckbeard:</textarea></form> */}
-                                                                {/* </div> */}
+                                                               
                                                             </div>
                                                         </div>
                                                     </div>
