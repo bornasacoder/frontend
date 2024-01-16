@@ -219,7 +219,7 @@ export default class Createproject extends Component {
                                             <div className="col-lg-8 setStick">
                                                 <div className="central-meta new-pst">
                                                     <div className="new-postbox" >
-                                                        <div className="m-modalV2__inner m-groups__create m-border p-4" >
+                                                        <div className="m-modalV2__inner m-groups__create m-border p-4" style={{width:"100%"}} >
                                                             
                                                             <div className="m-modalV2__body m-formWrapper">
                                                             <div className="m-modalV2__header m-groupsCreate__header">
@@ -228,33 +228,33 @@ export default class Createproject extends Component {
                                                                 <form onSubmit={this.handleSubmitFile} className="m-groupsCreate__form m-formWrapper m-formLayout--buttonRight ">
                                                                     <div className="m-form__fieldsContainer">
                                                                         <div className="m-form__field--text stretchedField">
-                                                                            <div className="m-form__row--label"><label>Name</label></div>
-                                                                            <div className="m-form__row--input"><input type="text" value={this.state.group_name}
-                                                                                onChange={this.onChange} name="group_name" style={{ fontSize: '18px' }} className="form-control " /></div>
+                                                                            <div className="m-form__row--label"><label>Project Title</label></div>
+                                                                            <div className="m-form__row--input"><input type="text" placeholder='Enter Project title here...' value={this.state.group_name}
+                                                                                onChange={this.onChange} name="group_name" style={{ fontSize: '16px', fonyWeight:"600 !important" }} className="form-control " /></div>
                                                                         </div>
                                                                     </div>
                                                                     <div className="m-form__fieldsContainer">
                                                                             <div className="m-form__row--label"><label>Avatar and Banner</label></div>
-                                                                        <div className="m-form__field--text" >
+                                                                        <div className="m-form__field--text">
                                                                             {/* <div style={{display:"flex",gap:"20px"}}> */}
-                                                                            <div className="m-channelEdit__imagery" style={{padding:"10px",display:"flex",gap:"20px"}}>
+                                                                            <div className="m-channelEdit__imagery" style={{padding:"10px",display:"flex",gap:"10px", justifyContent:"flex-start"}}>
                                                                                 
-                                                                                <div className='' style={{}}>
+                                                                                <div>
                                                                                 {this.state.image_preview ? <img src={this.state.image_preview} alt="No Data" /> : ''}
 
-<label htmlFor="channel-v2-edit-banner" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadBanner">
-    <m-icon iconid="file_upload">
-        <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"30px",left:"30px" }}></i>
-    </m-icon>
-    <input data-cy="minds-groups-create-banner" id="channel-v2-edit-banner" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview} type="file" />
-</label>
+                                                    <label htmlFor="channel-v2-edit-banner" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadBanner">
+                                                        <m-icon iconid="file_upload">
+                                                            <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"0px",left:"0px", right:"0px", bottom:"0px", display:"flex", justifyContent:"center", alignItems:"center" }}></i>
+                                                        </m-icon>
+                                                        <input data-cy="minds-groups-create-banner" id="channel-v2-edit-banner" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview} type="file" />
+                                                    </label>
                                                                                 </div>
                                                                                 
                                                                                 <div className="" style={{display:"flex",justifyContent:"center",alignItems:"center",position:"relative"}}>
                                                                                     <div>
                                                                                     <label htmlFor="channel-v2-edit-avatar" className="m-channelEditImagery__uploadTrigger m-channelEditImagery__uploadAvatar">
                                                                                         <m-icon iconid="file_upload">
-                                                                                            <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"50px",left:"30px" }}></i>
+                                                                                            <i className="fa fa-upload" style={{ fontSize: '1em',position:"absolute",top:"-6px",left:"0px", right:"0px", bottom:"0px", display:"flex", justifyContent:"center", alignItems:"center" }}></i>
                                                                                             {this.state.image_preview1 ? <img src={this.state.image_preview1} alt="No Data" style={{ height: '148px', width: '217px', left: '229px' }} /> : ''}
                                                                                         </m-icon>
                                                                                         <input id="channel-v2-edit-avatar" type="file" accept=".jpg,.jpeg,.png" onChange={this.handleImagePreview1} />
@@ -269,8 +269,8 @@ export default class Createproject extends Component {
                                                                     <div className="m-form__fieldsContainer">
                                                                         <div className="m-form__field--text stretchedField">
                                                                             <div className="m-form__row--label"><label>Description</label></div>
-                                                                            <div className="m-form__row--input"><textarea value={this.state.description}
-                                                                                onChange={this.onChange} name="description" style={{ fontSize: '18px' }} data-cy="minds-groups-create-description-input" className="form-control ng-untouched ng-pristine ng-valid"></textarea></div>
+                                                                            <div className="m-form__row--input"><textarea value={this.state.description} rows={4}
+                                                                                onChange={this.onChange} name="description" style={{ fontSize: '16px' }} data-cy="minds-groups-create-description-input" placeholder='Describe your project here...' className="form-control ng-untouched ng-pristine ng-valid"></textarea></div>
                                                                         </div>
                                                                     </div>
 
@@ -280,7 +280,7 @@ export default class Createproject extends Component {
                                                                             <div className="m-form__row--label">
                                                                                 <label htmlFor="name">Duration</label>
                                                                             </div>
-                                                                            <div className="m-form__row--input">
+                                                                            <div className="m-form__row--input " style={{border:"1px solid #eee"}}>
                                                                                 <div class="form-group">
 
                                                                                     <select value={this.state.days}
