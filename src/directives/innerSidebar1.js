@@ -137,7 +137,7 @@ export default class InnerSidebar1 extends Component {
 
     render() {
         return (
-            <div className=" navsidebar ">
+            <div className=" navsidebar " style={{zIndex:9999}}>
                 <aside className="sidebar fixed ">
                     <div className="widget" style={{ height: '377px', overflowY: 'auto', width: '100%',  }}>
                         <br />

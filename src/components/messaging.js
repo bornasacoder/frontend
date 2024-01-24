@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
 import { RiMessengerFill } from "react-icons/ri";
 import { BsThreeDots } from "react-icons/bs";
+import { IoClose } from "react-icons/io5";
 const headers = {
    'Content-Type': 'text/plain'
 };
@@ -542,28 +543,22 @@ export default class Messaging extends Component {
 
 
 
-            <div className="m-messenger--userlist m-messenger--dockpane">
+            <div className="m-messenger--userlist m-messenger--dockpane" >
                <div className="m-messenger--dockpane-tab" id="message-head">
                   <div className="m-messenger--dockpane-tab-title">
                      {/* <i className="material-icons fa fa-comment"></i> */}
                      <RiMessengerFill style={{fontSize:'25px',color:'black'}} />
                      </div>
                   
-                  <div className="m-messenger--dockpane-tab-actions">
-               
-                  </div>
+                  
                </div>
-               <div className="m-messenger--dockpane-container" id="message_user_list" style={{ display: "none" }}>
-                  {/* <div className="m-messenger--dockpane-tab-ribbon mdl-color-text--blue-grey-300" hidden="">
-         
-         <div className="m-messenger--dockpane-tab-icon mdl-color-text--blue-grey-300">
-         </div>
-      
-      </div> */}
+   <div className="m-messenger--dockpane-container" id="message_user_list" style={{ display: "none" }}>
+                  
 
-                  <div minds-messenger-scroll="" className="m-messenger--userlist-conversations">
-                     <div>
+                  <div minds-messenger-scroll="" className="m-messenger--userlist-conversations" >
+                     <div style={{display:'flex',justifyContent:'space-between',width:'100%'}}>
                         <p style={{fontSize:'26px',fontWeight:'500',color:'black'}}>Chats</p>
+                        <IoClose style={{fontSize:'25px'}}/>
                      </div>
                   <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2">
                      <i className="material-icons fa fa-search icons-set"></i>

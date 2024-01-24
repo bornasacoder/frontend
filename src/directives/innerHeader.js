@@ -326,20 +326,20 @@ const headers = {
                 <Notifications />
 
 
-                    {this.state.open &&  <div  style={{position:"absolute",right:"0px",top:"0px",bottom:"0px",padding:"20px",backgroundColor:"#fff",maxHeight:"100vh",zIndex:"1999",width:"100vw",overflow:"scroll",minHeight:"100vh", }}>
-                        <div className='d-flex justify-content-end pr-2 ' >
-                        <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end"}} onClick={this.handleOpen}>&times;</span>
-                        </div>
+                    {this.state.open &&  <div  style={{position:"absolute",right:"0px",top:"0px",bottom:"0px",padding:"20px",backgroundColor:"#fff",maxHeight:"100vh",width:"100vw",overflow:"scroll",minHeight:"100vh",zIndex:999999 }}>
                    
                       
 
-                        <div className='mt-2'>
+                        <div className='mt-2' style={{zIndex:9,position:'absolute'}}>
+                        <div className=''style={{height:'40px',background:'black',position:'relative',top:0,zIndex:"99999"}} >
+                        <span aria-hidden="true" style={{fontSize:"24px",textAlign:"end",color:'white'}} onClick={this.handleOpen}>&times;</span>
+                        </div>
                             <InnerSidebar1/>
                         </div>
                    
                     </div>}
 
-                    <span className="crowd_fund" >
+                    <span className="crowd_fund">
 
                         <Link to='/dashboard' className={this.props.location?.pathname === "/dashboard" ? 'inner active' : 'inner navlink'}>
                         <div className='tool'>
@@ -453,23 +453,23 @@ const headers = {
                                 <i className="fa fa-bell-o text-black  " aria-hidden="true" style={{fontSize:'20px'}}></i><span className="badge" >{this.notifCount?.unread_count}</span>
                             </a>
                             <div className="dropdowns ps-container ps-theme-default ps-active-y notif" >
-                                <span>{this.notifCount?.unread_count} New Notifications</span>
+                                <span style={{fontSize:'22px',fontWeight:'600',color:'black'}}>Notifications</span>
                                 <ul className="drops-menu">
                                     {this.state.NotifData.map(item => (
                                         item.isread === '0' ? <li onClick={this.notificationReadSingle.bind(this, item)} style={{ background: 'whitesmoke' }}>
                                             <Link to="/" title="">
-                                                <img src={item.profile_pic} alt="" />
+                                                <img src={item.profile_pic} alt="icon/demo-avatar.jpg" />
                                                 <div className="mesg-meta">
                                                     <h6>{item.sender}</h6>
                                                     <span title={item.message}>{item.title}</span>
                                                     <i>{item.duration}</i>
                                                 </div>
                                             </Link>
-                                            {/* <span className="tag green">New</span> */}
+                                          
                                         </li> :
                                             <li onClick={this.loading1.bind(this, item)} >
                                                 <Link to="/" title="">
-                                                    <img src={item.profile_pic} alt="" />
+                                                    <img src={item.profile_pic} alt='icon/demo-avatar.jpg' />
                                                     <div className="mesg-meta">
                                                         <h6>{item.sender}</h6>
                                                         <span title={item.message}>{item.title}</span>
