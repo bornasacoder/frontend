@@ -1448,6 +1448,14 @@ footer .border-right{
     font-weight: 900;
     font-family: Roboto,Helvetica,sans-serif;
 }
+
+@media (max-width:600px) {
+    .sectionP60 h1{
+        font-size: 40px;
+        font-weight: 800;
+        text-align: center;
+    }
+}
 .m-marketingAsFeaturedIn__title {
     display: flex;
     flex-direction: column;

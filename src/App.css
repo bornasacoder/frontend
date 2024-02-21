@@ -1417,7 +1417,7 @@ li.post-comment {
   border: 1px solid black;
   margin-right: -250px;
 }
- {
+ /* {
   border-bottom: 1px solid #e8e8e8;
   background-color: #fff;
   color: #4f4f50;
@@ -1427,7 +1427,7 @@ li.post-comment {
   width: 100%;
   display: block;
   cursor: pointer;
-}
+} */
 .m-messenger--dockpane-container2 {
   background-color: #fff;
   display: block;
@@ -1459,7 +1459,7 @@ li.post-comment {
 .m-messenger--dockpane-container2{
   left: -7px;
   top: 30px;
-  width:100%;
+  width:90%;
  
 
 }
@@ -1467,7 +1467,7 @@ li.post-comment {
 .m-messenger--dockpane-container{
  left: 60px;
   top: 0px;
-  width:590px;
+  width:95%;
   height: 70vh;
  
  
@@ -1562,6 +1562,7 @@ textarea:-internal-autofill-selected {
   overflow: scroll;
   overflow-x: hidden;
   background: #fbfbfb;
+  height: 310px;
 }
 .m-messenger--conversation .m-messenger--conversation-messages .m-messenger--conversation-messages-message {
   text-align: right;
@@ -3741,11 +3742,11 @@ body {
      z-index: 9999999;
    }
   .coment_box{
-    width: 100% !important;
+    width: 90% !important;
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 0px;
-    left: -7px;
+    left: 12px;
 
   }
 }

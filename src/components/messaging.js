@@ -43,6 +43,8 @@ export default class Messaging extends Component {
          this.BannerImageAPI()
       }, 10000);
 
+     
+
 
       $('body').delegate('.m-emoji-selector-list span', 'click', function () {
          var val = $(this).closest('.main_msg_area').find('textarea').val() + $(this).text();
@@ -50,13 +52,14 @@ export default class Messaging extends Component {
       });
 
 
-      // $('body').delegate('.main_msg_area textarea', 'keyup', function (e) {
-      //    if (e.keyCode == 13) {
-      //       $(this).closest('.main_msg_area').find('#send_btn').click();
-      //    }
-      // });
+    
 
    }
+
+
+
+
+
 
    user_search1(id) {
       //  e.preventDefault();
@@ -546,11 +549,8 @@ export default class Messaging extends Component {
             <div className="m-messenger--userlist m-messenger--dockpane" >
                <div className="m-messenger--dockpane-tab" id="message-head">
                   <div className="m-messenger--dockpane-tab-title">
-                     {/* <i className="material-icons fa fa-comment"></i> */}
                      <RiMessengerFill style={{fontSize:'25px',color:'black'}} />
                      </div>
-                  
-                  
                </div>
    <div className="m-messenger--dockpane-container" id="message_user_list" style={{ display: "none" }}>
                   
@@ -558,7 +558,10 @@ export default class Messaging extends Component {
                   <div minds-messenger-scroll="" className="m-messenger--userlist-conversations" >
                      <div style={{display:'flex',justifyContent:'space-between',width:'100%'}}>
                         <p style={{fontSize:'26px',fontWeight:'500',color:'black'}}>Chats</p>
-                        <IoClose style={{fontSize:'25px'}}/>
+
+                        <div>
+                        <IoClose style={{fontSize:'25px',cursor:'pointer'}} />
+                        </div>
                      </div>
                   <div className="m-messenger--userlist-search d-flex justify-content-start gap-2 align-baseline my-2">
                      <i className="material-icons fa fa-search icons-set"></i>
